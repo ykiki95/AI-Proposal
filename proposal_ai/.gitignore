@@ -1,0 +1,17 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.venv/
+
+# Env
+.env
+
+# Storage outputs
+storage/db.sqlite
+storage/outputs/*.docx
+storage/outputs/*.pptx
+!storage/outputs/.gitkeep
+
+# OS
+.DS_Store

@@ -1,0 +1,60 @@
+# =========================================================================
+# 지자체별 크롤링 셀렉터 설정.
+# 새 지자체 추가 시 이 파일에 항목만 추가하면 김탐정이 자동 인식한다.
+# =========================================================================
+agencies:
+  - name: "서울특별시"
+    code: "seoul"
+    list_url: "https://news.seoul.go.kr/gov/archives/category/notice-bid"
+    type: "static"     # static (requests+bs4) | dynamic (playwright)
+    selectors:
+      item: "article.post"
+      title: "h2.post-title a"
+      link: "h2.post-title a"
+      summary: ".post-excerpt"
+      deadline: ".post-meta time"
+
+  - name: "경기도"
+    code: "gyeonggi"
+    list_url: "https://www.gg.go.kr/contents/contents.do?ciIdx=1212"
+    type: "static"
+    selectors:
+      item: "table.bbs_list tbody tr"
+      title: "td.subject a"
+      link: "td.subject a"
+      summary: "td.dept"
+      deadline: "td.regdate"
+
+  - name: "부산광역시"
+    code: "busan"
+    list_url: "https://www.busan.go.kr/nbtnoticeBidList.do"
+    type: "static"
+    selectors:
+      item: "table.basic_table tbody tr"
+      title: "td.txt_left a"
+      link: "td.txt_left a"
+      summary: "td:nth-child(3)"
+      deadline: "td:nth-child(5)"
+
+# =========================================================================
+# 키워드 필터: 김탐정이 1차로 적용
+# =========================================================================
+keywords:
+  include:
+    - "홈페이지"
+    - "웹사이트"
+    - "웹 사이트"
+    - "시스템 구축"
+    - "플랫폼"
+    - "포털"
+    - "리뉴얼"
+    - "통합 관리"
+    - "정보화"
+    - "디지털"
+    - "콘텐츠 관리"
+    - "CMS"
+    - "모바일 앱"
+  exclude:
+    - "용역 평가"
+    - "감리"
+    - "유지관리 단순"
