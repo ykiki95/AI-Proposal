@@ -41,7 +41,7 @@ def _chunks(s: str, size: int) -> List[str]:
 
 def _llm_fallback(text: str) -> List[Dict]:
     """LLM 기반 맞춤법 검사 (간이). 호출 실패 시 빈 리스트."""
-    from tools.llm_clients import chat_openai
+    from tools.llm_client import chat
     from config.settings import MODELS
 
     prompt = (
@@ -51,7 +51,7 @@ def _llm_fallback(text: str) -> List[Dict]:
         f"---\n{text[:3000]}\n---"
     )
     try:
-        out = chat_openai(MODELS.oh, "당신은 한국어 교정 전문가입니다.", prompt, max_tokens=1024)
+        out = chat(MODELS.reviewer, "당신은 한국어 교정 전문가입니다.", prompt, max_tokens=1024)
         import json, re
         m = re.search(r"\[.*\]", out, re.S)
         if m:

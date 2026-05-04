@@ -1,0 +1,30 @@
+======================================================================
+[B-1 SAFE] 공공 4건 인덱싱 시작 (C:\Users\ykiki\Projects\AI-Proposal\proposal_ai\data\winning_proposals)
+  - [경찰청] 스마트워크시스템 고도화 사업 제안_발표자료_GD_완_v10.pdf
+  - [정성제안서]KYWA 대표홈페이지 유지보수 용역_v1.0.pdf
+  - 2026 서울 MICE 홈페이지 및 종합지원시스템 통합 유지보수 용역_기술제안서_원본.pdf
+  - 2026년 내친구서울 누리집 재개발 용역_기술제안서_원본.pdf
+======================================================================
+ChromaDB 연결 중…
+[32m2026-04-30 11:54:27.673[0m | [1mINFO    [0m | [36mrag.vector_store[0m:[36m__init__[0m:[36m54[0m - [1mVectorStore 초기화: reference_proposals (현재 0건)[0m
+시작 시점 컬렉션 청크 수: 0
+
+----------------------------------------------------------------------
+[1/4] [경찰청] 스마트워크시스템 고도화 사업 제안_발표자료_GD_완_v10.pdf
+----------------------------------------------------------------------
+  ▷ PDF 파싱…
+    캐시 히트: [경찰청] 스마트워크시스템 고도화 사업 제안_발표자료_GD_완_v10.json
+    페이지 74
+  ▷ 청킹…
+Traceback (most recent call last):
+  File "C:\Users\ykiki\Projects\AI-Proposal\proposal_ai\scripts\ingest_public_safe.py", line 317, in <module>
+    sys.exit(main())
+             ~~~~^^
+  File "C:\Users\ykiki\Projects\AI-Proposal\proposal_ai\scripts\ingest_public_safe.py", line 239, in main
+    chunks = chunk_pdf_doc(doc)
+  File "C:\Users\ykiki\Projects\AI-Proposal\proposal_ai\rag\chunker.py", line 71, in chunk_pdf_doc
+    sub_chunks = _split_text(full_text, max_chars, overlap)
+  File "C:\Users\ykiki\Projects\AI-Proposal\proposal_ai\rag\chunker.py", line 39, in _split_text
+    chunks.append(chunk.strip())
+    ~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+MemoryError

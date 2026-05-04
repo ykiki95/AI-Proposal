@@ -1,0 +1,37 @@
+======================================================================
+[B-1 SAFE] 인덱싱 시작 (C:\Users\ykiki\Projects\AI-Proposal\proposal_ai\data\winning_proposals)
+  시작 메모리: 80MB
+  - [경찰청] 스마트워크시스템 고도화 사업 제안_발표자료_GD_완_v10.pdf
+======================================================================
+ChromaDB 연결 중…
+[32m2026-04-30 12:55:34.789[0m | [1mINFO    [0m | [36mrag.vector_store[0m:[36m__init__[0m:[36m54[0m - [1mVectorStore 초기화: reference_proposals (현재 0건)[0m
+  시작 시점 컬렉션 청크 수: 0
+
+----------------------------------------------------------------------
+[1/1] [경찰청] 스마트워크시스템 고도화 사업 제안_발표자료_GD_완_v10.pdf
+----------------------------------------------------------------------
+  ▷ PDF 파싱… mem=113MB
+    캐시 히트: [경찰청] 스마트워크시스템 고도화 사업 제안_발표자료_GD_완_v10.json
+    페이지 74 / mem=115MB
+  ▷ 청킹 + 임베딩 + upsert (스트리밍, batch=16)…
+    flush 16청크 / 파일누적 16 / 컬렉션 16 / mem=125MB
+    flush 16청크 / 파일누적 32 / 컬렉션 32 / mem=126MB
+    ! Voyage embed 실패 (시도 1/3): You have not yet added your payment method in the billing page and will have reduced rate limits of 3 RPM and 10K TPM. To unlock our standard rate limits, please add a payment method in the billing page for the appropriate organization in the user dashboard (https://dashboard.voyageai.com/). Even with payment methods entered, the free tokens (200M tokens for Voyage series 3) will still apply. After adding a payment method, you should see your rate limits increase after several minutes. See our pricing docs (https://docs.voyageai.com/docs/pricing) for the free tokens for your model.
+    ↳ 2초 후 재시도
+    ! Voyage embed 실패 (시도 2/3): You have not yet added your payment method in the billing page and will have reduced rate limits of 3 RPM and 10K TPM. To unlock our standard rate limits, please add a payment method in the billing page for the appropriate organization in the user dashboard (https://dashboard.voyageai.com/). Even with payment methods entered, the free tokens (200M tokens for Voyage series 3) will still apply. After adding a payment method, you should see your rate limits increase after several minutes. See our pricing docs (https://docs.voyageai.com/docs/pricing) for the free tokens for your model.
+    ↳ 4초 후 재시도
+    ! Voyage embed 실패 (시도 3/3): You have not yet added your payment method in the billing page and will have reduced rate limits of 3 RPM and 10K TPM. To unlock our standard rate limits, please add a payment method in the billing page for the appropriate organization in the user dashboard (https://dashboard.voyageai.com/). Even with payment methods entered, the free tokens (200M tokens for Voyage series 3) will still apply. After adding a payment method, you should see your rate limits increase after several minutes. See our pricing docs (https://docs.voyageai.com/docs/pricing) for the free tokens for your model.
+  ✗ 실패: Voyage embed 3회 모두 실패: You have not yet added your payment method in the billing page and will have reduced rate limits of 3 RPM and 10K TPM. To unlock our standard rate limits, please add a payment method in the billing page for the appropriate organization in the user dashboard (https://dashboard.voyageai.com/). Even with payment methods entered, the free tokens (200M tokens for Voyage series 3) will still apply. After adding a payment method, you should see your rate limits increase after several minutes. See our pricing docs (https://docs.voyageai.com/docs/pricing) for the free tokens for your model.
+Traceback (most recent call last):
+  File "C:\Users\ykiki\Projects\AI-Proposal\proposal_ai\scripts\ingest_public_safe.py", line 309, in main
+    added = _ingest_one(pdf_path, store, voyage_client, voyage_model)
+  File "C:\Users\ykiki\Projects\AI-Proposal\proposal_ai\scripts\ingest_public_safe.py", line 238, in _ingest_one
+    _flush()
+    ~~~~~~^^
+  File "C:\Users\ykiki\Projects\AI-Proposal\proposal_ai\scripts\ingest_public_safe.py", line 225, in _flush
+    embs = _embed_documents_safe(voyage_client, voyage_model, texts)
+  File "C:\Users\ykiki\Projects\AI-Proposal\proposal_ai\scripts\ingest_public_safe.py", line 122, in _embed_documents_safe
+    batch_embs = _embed_batch_with_timeout(client, batch, model)
+  File "C:\Users\ykiki\Projects\AI-Proposal\proposal_ai\scripts\ingest_public_safe.py", line 108, in _embed_batch_with_timeout
+    raise RuntimeError(f"Voyage embed {EMBED_MAX_RETRY}회 모두 실패: {last_err}")
+RuntimeError: Voyage embed 3회 모두 실패: You have not yet added your payment method in the billing page and will have reduced rate limits of 3 RPM and 10K TPM. To unlock our standard rate limits, please add a payment method in the billing page for the appropriate organization in the user dashboard (https://dashboard.voyageai.com/). Even with payment methods entered, the free tokens (200M tokens for Voyage series 3) will still apply. After adding a payment method, you should see your rate limits increase after several minutes. See our pricing docs (https://docs.voyageai.com/docs/pricing) for the free tokens for your model.

@@ -1,0 +1,169 @@
+======================================================================
+ smoke run wrapper — smoke_001
+ 시작: 2026-05-04T17:11:08.889097
+ 로그: C:\Users\ykiki\Projects\AI-Proposal\proposal_ai\storage\logs\smoke_run_smoke_001_20260504_171108.log
+======================================================================
+
+======================================================================
+ [0/7] preflight   (환경/DB/ChromaDB 검증)
+======================================================================
+  USE_BEDROCK         : True
+  has_bedrock         : True
+  AWS region          : ap-northeast-1
+  Bedrock 매핑:
+    claude-opus-4-7                  → jp.anthropic.claude-sonnet-4-5-20250929-v1:0
+    claude-sonnet-4-6                → jp.anthropic.claude-sonnet-4-5-20250929-v1:0
+    claude-haiku-4-5-20251001        → jp.anthropic.claude-haiku-4-5-20251001-v1:0
+  bid smoke_001       : status=수집완료
+  ChromaDB (rfp_documents): 230건
+  → 완료 (0.7s)
+
+======================================================================
+ [1/7] analyze + 게이트1 승인   (예상 ~$0.01-0.05, 1-2분)
+======================================================================
+  평가 1건 (대상 smoke_001: 1건)
+  smoke_001 상태 (analyze 후): 평가완료
+  게이트1 자동 승인: smoke_001 → APPROVED
+  → 완료 (11.4s)
+
+======================================================================
+ [2/7] strategize   (예상 ~$0.05-0.15, 2-5분)
+======================================================================
+  전략 산출 1건
+  → 완료 (4m 1s)
+
+======================================================================
+ [3/7] write   (예상 ~$0.20-0.40, 5-15분 ⭐ 가장 비싼 단계)
+======================================================================
+  초안 작성 1건
+    sections=8, docx=None
+  → 완료 (12m 8s)
+
+======================================================================
+ [4/7] review   (예상 ~$0.05-0.10, 1-3분)
+======================================================================
+  검수 1건
+    grade=C, acceptance_valid=True, toc_sim=1.00
+  → 완료 (31.1s)
+
+======================================================================
+ [5/7] 게이트3 자동 승인   (DB 직접 변경)
+======================================================================
+  smoke_001 → FINAL_APPROVED
+  → 완료 (0.0s)
+
+======================================================================
+ [6/7] graphics   (예상 ~$0.05-0.10, 1-3분)
+======================================================================
+  PPTX/스토리보드 1건
+  → 완료 (3m 31s)
+
+======================================================================
+ 실행 결과 요약
+======================================================================
+  bid_id              : smoke_001
+  시작                 : 2026-05-04T17:11:08.889097
+  종료                 : 2026-05-04T17:31:32.358159
+  총 소요               : 20m 23s
+  USE_BEDROCK         : True
+  중단 발생             : False
+
+  단계별 결과:
+    ✅ [0] preflight                       0.7s
+    ✅ [1] analyze + 게이트1 승인               11.4s
+    ✅ [2] strategize                      4m 1s
+    ✅ [3] write                           12m 8s
+    ✅ [4] review                          31.1s
+    ✅ [5] 게이트3 자동 승인                      0.0s
+    ✅ [6] graphics                        3m 31s
+
+  누적 토큰:
+{
+  "claude-sonnet-4-6": {
+    "in": 36813,
+    "out": 6692,
+    "cache_read": 0,
+    "cache_create": 0,
+    "calls": 5
+  },
+  "claude-opus-4-7": {
+    "in": 470614,
+    "out": 163980,
+    "cache_read": 0,
+    "cache_create": 0,
+    "calls": 22
+  }
+}
+  추정 비용 (Bedrock 매핑): $4.0824
+
+  산출물:
+    C:\Users\ykiki\Projects\AI-Proposal\proposal_ai\storage\outputs\smoke_001_pt_v1.pptx      77.6 KB
+    C:\Users\ykiki\Projects\AI-Proposal\proposal_ai\storage\outputs\smoke_001_storyboard_v1.pptx     168.3 KB
+    C:\Users\ykiki\Projects\AI-Proposal\proposal_ai\storage\proposals\smoke_001_v1_acceptance.json      36.2 KB
+    C:\Users\ykiki\Projects\AI-Proposal\proposal_ai\storage\rfp_cache\smoke_001.json      48.3 KB
+
+  다음 액션:
+    explorer.exe C:\Users\ykiki\Projects\AI-Proposal\proposal_ai\storage\outputs
+    또는 산출물 경로 직접 열어 검토
+
+ | [bedrock] cache_system disabled (호환성)
+17:17:29.303 | DEBUG   | tools.llm_client:chat:172 | [anthropic:claude-opus-4-7] in=21056 out=8000 cache_read=0 cache_create=0
+17:17:29.320 | DEBUG   | tools.llm_client:chat:135 | [bedrock] cache_system disabled (호환성)
+17:17:30.950 | DEBUG   | tools.llm_client:chat:172 | [anthropic:claude-opus-4-7] in=23342 out=8000 cache_read=0 cache_create=0
+17:17:30.964 | DEBUG   | tools.llm_client:chat:135 | [bedrock] cache_system disabled (호환성)
+17:19:21.393 | DEBUG   | tools.llm_client:chat:172 | [anthropic:claude-opus-4-7] in=24068 out=8000 cache_read=0 cache_create=0
+17:19:21.407 | DEBUG   | tools.llm_client:chat:135 | [bedrock] cache_system disabled (호환성)
+17:19:35.409 | DEBUG   | tools.llm_client:chat:172 | [anthropic:claude-opus-4-7] in=21059 out=8000 cache_read=0 cache_create=0
+17:19:35.426 | DEBUG   | tools.llm_client:chat:135 | [bedrock] cache_system disabled (호환성)
+17:19:40.643 | DEBUG   | tools.llm_client:chat:172 | [anthropic:claude-opus-4-7] in=23341 out=7500 cache_read=0 cache_create=0
+17:19:40.654 | DEBUG   | tools.llm_client:chat:135 | [bedrock] cache_system disabled (호환성)
+17:21:21.227 | DEBUG   | tools.llm_client:chat:172 | [anthropic:claude-opus-4-7] in=23340 out=6000 cache_read=0 cache_create=0
+17:21:21.251 | INFO    | agents.base_agent:progress:35 | [writer] 섹션 완료: Ⅰ. 사업 이해
+17:21:21.253 | DEBUG   | tools.llm_client:chat:135 | [bedrock] cache_system disabled (호환성)
+17:21:26.654 | DEBUG   | tools.llm_client:chat:172 | [anthropic:claude-opus-4-7] in=24075 out=8000 cache_read=0 cache_create=0
+17:21:26.674 | DEBUG   | tools.llm_client:chat:135 | [bedrock] cache_system disabled (호환성)
+17:21:33.155 | DEBUG   | tools.llm_client:chat:172 | [anthropic:claude-opus-4-7] in=21059 out=7500 cache_read=0 cache_create=0
+17:21:33.168 | INFO    | agents.base_agent:progress:35 | [writer] 섹션 완료: Ⅲ. 사업 추진 방법론 및 산출물
+17:21:33.168 | INFO    | agents.base_agent:progress:35 | [writer] 섹션 완료: Ⅴ. 투입 인력 및 조직 구성
+17:21:33.169 | INFO    | agents.base_agent:progress:35 | [writer] 섹션 완료: Ⅵ. 회사 소개 및 수행 실적
+17:21:33.170 | DEBUG   | tools.llm_client:chat:135 | [bedrock] cache_system disabled (호환성)
+17:23:14.209 | DEBUG   | tools.llm_client:chat:172 | [anthropic:claude-opus-4-7] in=20902 out=8000 cache_read=0 cache_create=0
+17:23:14.232 | INFO    | agents.base_agent:progress:35 | [writer] 섹션 완료: Ⅳ. 사업 추진 일정
+17:23:14.235 | DEBUG   | tools.llm_client:chat:135 | [bedrock] cache_system disabled (호환성)
+17:23:21.626 | DEBUG   | tools.llm_client:chat:172 | [anthropic:claude-opus-4-7] in=24072 out=8000 cache_read=0 cache_create=0
+17:23:21.655 | DEBUG   | tools.llm_client:chat:135 | [bedrock] cache_system disabled (호환성)
+17:23:31.753 | DEBUG   | tools.llm_client:chat:172 | [anthropic:claude-opus-4-7] in=21950 out=8000 cache_read=0 cache_create=0
+17:23:31.773 | DEBUG   | tools.llm_client:chat:135 | [bedrock] cache_system disabled (호환성)
+17:24:21.560 | DEBUG   | tools.llm_client:chat:172 | [anthropic:claude-opus-4-7] in=20944 out=4500 cache_read=0 cache_create=0
+17:24:21.580 | DEBUG   | tools.llm_client:chat:135 | [bedrock] cache_system disabled (호환성)
+17:25:06.613 | DEBUG   | tools.llm_client:chat:172 | [anthropic:claude-opus-4-7] in=21951 out=6000 cache_read=0 cache_create=0
+17:25:06.630 | DEBUG   | tools.llm_client:chat:135 | [bedrock] cache_system disabled (호환성)
+17:25:22.766 | DEBUG   | tools.llm_client:chat:172 | [anthropic:claude-opus-4-7] in=24067 out=8000 cache_read=0 cache_create=0
+17:25:22.783 | DEBUG   | tools.llm_client:chat:135 | [bedrock] cache_system disabled (호환성)
+17:25:34.029 | DEBUG   | tools.llm_client:chat:172 | [anthropic:claude-opus-4-7] in=20944 out=4500 cache_read=0 cache_create=0
+17:25:34.046 | DEBUG   | tools.llm_client:chat:135 | [bedrock] cache_system disabled (호환성)
+17:26:21.943 | DEBUG   | tools.llm_client:chat:172 | [anthropic:claude-opus-4-7] in=21955 out=4500 cache_read=0 cache_create=0
+17:26:21.959 | INFO    | agents.base_agent:progress:35 | [writer] 섹션 완료: Ⅶ. 품질 및 보안 관리
+17:27:16.452 | DEBUG   | tools.llm_client:chat:172 | [anthropic:claude-opus-4-7] in=24069 out=7500 cache_read=0 cache_create=0
+17:27:17.108 | INFO    | agents.base_agent:progress:35 | [writer] 섹션 완료: Ⅱ. 제안 내용
+17:27:30.051 | DEBUG   | tools.llm_client:chat:172 | [anthropic:claude-opus-4-7] in=20944 out=7500 cache_read=0 cache_create=0
+17:27:30.068 | INFO    | agents.base_agent:progress:35 | [writer] 섹션 완료: Ⅷ. 사업 비용 및 투자 계획
+17:27:30.106 | INFO    | agents.base_agent:progress:35 | [writer] 작성 완료: 8섹션, 목표 110p
+17:27:30.137 | INFO    | agents.base_agent:progress:35 | [reviewer] 검수 시작: smoke_001 v1 (model=claude-sonnet-4-6)
+17:27:30.139 | INFO    | agents.base_agent:progress:35 | [reviewer] 수용표: 총 92건 / 완전수용 0 / 미수용 0 / 미매핑 92
+17:27:30.139 | INFO    | agents.base_agent:progress:35 | [reviewer] 목차 일치율 1.00 (통과 / 임계 0.90)
+17:27:31.765 | DEBUG   | tools.llm_client:chat:172 | [anthropic:claude-sonnet-4-6] in=2846 out=42 cache_read=0 cache_create=0
+17:27:31.766 | DEBUG   | tools.llm_client:chat:135 | [bedrock] cache_system disabled (호환성)
+17:28:01.181 | DEBUG   | tools.llm_client:chat:172 | [anthropic:claude-sonnet-4-6] in=12516 out=1495 cache_read=0 cache_create=0
+17:28:01.213 | DEBUG   | tools.notion_client:push_quality_report:60 | [notion-skip] quality report smoke_001
+17:28:01.234 | INFO    | agents.base_agent:progress:35 | [reviewer] 검수 완료: grade=C, accept_valid=True, action 6건
+17:28:01.278 | INFO    | agents.base_agent:progress:35 | [graphics] 시각화 시작: smoke_001 v1 (layout=가로형, model=claude-sonnet-4-6)
+17:28:01.280 | DEBUG   | tools.llm_client:chat:135 | [bedrock] cache_system disabled (호환성)
+17:28:08.556 | DEBUG   | tools.llm_client:chat:172 | [anthropic:claude-sonnet-4-6] in=1390 out=456 cache_read=0 cache_create=0
+17:28:08.557 | INFO    | agents.base_agent:progress:35 | [graphics] 디자인 결정: theme=corporate_navy master=시스템 기본 · 공공기관용 네이비 accent=#7C4199
+17:28:08.566 | INFO    | agents.base_agent:progress:35 | [graphics] 수용표 부록 추가: 92건
+17:28:08.740 | INFO    | tools.pptx_builder:build_proposal_pptx_v2:793 | 📊 PPTX v2 생성: C:\Users\ykiki\Projects\AI-Proposal\proposal_ai\storage\outputs\smoke_001_pt_v1.pptx (theme=corporate_navy, master=시스템 기본 · 공공기관용 네이비, 본문 19장)
+17:28:08.759 | INFO    | agents.base_agent:progress:35 | [graphics] 최종 PPTX: smoke_001_pt_v1.pptx
+17:31:32.027 | DEBUG   | tools.llm_client:chat:172 | [anthropic:claude-opus-4-7] in=15011 out=14081 cache_read=0 cache_create=0
+17:31:32.316 | INFO    | tools.storyboard_generator:render_storyboard:312 | 📋 스토리보드 PPTX 생성: C:\Users\ykiki\Projects\AI-Proposal\proposal_ai\storage\outputs\smoke_001_storyboard_v1.pptx (슬라이드 35장)
+17:31:32.336 | INFO    | agents.base_agent:progress:35 | [graphics] 스토리보드: smoke_001_storyboard_v1.pptx

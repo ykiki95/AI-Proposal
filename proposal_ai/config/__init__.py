@@ -1,3 +1,3 @@
-from .settings import COMPANY, KEYS, LLM, MODELS, SYS, summary
+from .settings import COMPANY, KEYS, MODELS, SYS, VECTOR, summary
 
-__all__ = ["COMPANY", "KEYS", "LLM", "MODELS", "SYS", "summary"]
+__all__ = ["COMPANY", "KEYS", "MODELS", "SYS", "VECTOR", "summary"]

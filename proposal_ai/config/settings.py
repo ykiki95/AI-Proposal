@@ -12,7 +12,6 @@ from typing import List, Optional
 
 from dotenv import load_dotenv
 
-# 프로젝트 루트
 ROOT_DIR = Path(__file__).resolve().parent.parent
 ENV_PATH = ROOT_DIR / ".env"
 if ENV_PATH.exists():
@@ -20,9 +19,25 @@ if ENV_PATH.exists():
 
 STORAGE_DIR = ROOT_DIR / "storage"
 OUTPUT_DIR = STORAGE_DIR / "outputs"
+MASTERS_DIR = STORAGE_DIR / "masters"
+PROPOSALS_DIR = STORAGE_DIR / "proposals"
+RFP_CACHE_DIR = STORAGE_DIR / "rfp_cache"
 DB_PATH = STORAGE_DIR / "db.sqlite"
-STORAGE_DIR.mkdir(exist_ok=True)
-OUTPUT_DIR.mkdir(exist_ok=True)
+
+DATA_DIR = ROOT_DIR / "data"
+PROCESSED_DIR = DATA_DIR / "processed"
+CHROMA_DB_PATH = DATA_DIR / "chroma_db"
+WINNING_PROPOSALS_DIR = DATA_DIR / "winning_proposals"
+WINNING_PROPOSALS_PPTX_DIR = DATA_DIR / "winning_proposals_pptx"
+TEMPLATES_DIR = ROOT_DIR / "templates"
+PATTERNS_DIR = TEMPLATES_DIR / "patterns"
+
+for _d in (
+    STORAGE_DIR, OUTPUT_DIR, MASTERS_DIR, PROPOSALS_DIR, RFP_CACHE_DIR,
+    PROCESSED_DIR, CHROMA_DB_PATH,
+    PATTERNS_DIR / "horizontal", PATTERNS_DIR / "vertical",
+):
+    _d.mkdir(parents=True, exist_ok=True)
 
 
 def _env(key: str, default: str = "") -> str:
@@ -38,7 +53,7 @@ def _int_env(key: str, default: int) -> int:
 
 @dataclass
 class CompanyProfile:
-    """회사 기본정보. 박제안 에이전트가 회사소개 섹션 작성에 사용."""
+    """회사 기본정보. WriterAgent가 회사소개 섹션 작성에 사용."""
     name: str = field(default_factory=lambda: _env("COMPANY_NAME", "주식회사 예시웹에이전시"))
     ceo: str = field(default_factory=lambda: _env("COMPANY_CEO", "우진"))
     biz_num: str = field(default_factory=lambda: _env("COMPANY_BIZ_NUM", "000-00-00000"))
@@ -59,22 +74,47 @@ class CompanyProfile:
 
 @dataclass
 class ModelConfig:
-    """에이전트별 모델 매핑. Replit AI Integrations가 지원하는 모델만 사용."""
-    kim: str = field(default_factory=lambda: _env("MODEL_KIM", "gpt-4o-mini"))
-    lee: str = field(default_factory=lambda: _env("MODEL_LEE", "claude-haiku-4-5"))
-    park: str = field(default_factory=lambda: _env("MODEL_PARK", "claude-opus-4-7"))
-    choi: str = field(default_factory=lambda: _env("MODEL_CHOI", "claude-sonnet-4-6"))
-    oh: str = field(default_factory=lambda: _env("MODEL_OH", "gpt-4o-mini"))
+    """에이전트별 모델 매핑.
+
+    모델 차등 적용 원칙:
+      - discovery  : claude-haiku-4-5    (단순 분류/수집, 비용 최소화)
+      - analysis   : claude-sonnet-4-6   (정확도 중심 평가)
+      - rfp_struct : claude-sonnet-4-6   (RFP 구조화)
+      - strategy   : claude-opus-4-7     (창의성, 전략 수립)
+      - writer     : claude-opus-4-7     (품질 최우선 글쓰기)
+      - reviewer   : claude-sonnet-4-6   (검수)
+      - graphics   : claude-sonnet-4-6   (슬라이드 설계)
+    """
+    discovery: str = field(default_factory=lambda: _env("MODEL_DISCOVERY", "claude-haiku-4-5-20251001"))
+    analysis: str = field(default_factory=lambda: _env("MODEL_ANALYSIS", "claude-sonnet-4-6"))
+    rfp_struct: str = field(default_factory=lambda: _env("MODEL_RFP_STRUCT", "claude-sonnet-4-6"))
+    strategy: str = field(default_factory=lambda: _env("MODEL_STRATEGY", "claude-opus-4-7"))
+    writer: str = field(default_factory=lambda: _env("MODEL_WRITER", "claude-opus-4-7"))
+    reviewer: str = field(default_factory=lambda: _env("MODEL_REVIEWER", "claude-sonnet-4-6"))
+    graphics: str = field(default_factory=lambda: _env("MODEL_GRAPHICS", "claude-sonnet-4-6"))
 
 
 @dataclass
 class IntegrationKeys:
     """외부 서비스 키. 미설정 시 fallback 동작."""
+    anthropic_api_key: str = field(default_factory=lambda: _env("ANTHROPIC_API_KEY"))
+    voyage_api_key: str = field(default_factory=lambda: _env("VOYAGE_API_KEY"))
     g2b_service_key: str = field(default_factory=lambda: _env("G2B_SERVICE_KEY"))
     notion_api_key: str = field(default_factory=lambda: _env("NOTION_API_KEY"))
     notion_db_bids: str = field(default_factory=lambda: _env("NOTION_DB_BIDS"))
     notion_db_proposals: str = field(default_factory=lambda: _env("NOTION_DB_PROPOSALS"))
     slack_webhook: str = field(default_factory=lambda: _env("SLACK_WEBHOOK_URL"))
+    aws_access_key_id: str = field(default_factory=lambda: _env("AWS_ACCESS_KEY_ID"))
+    aws_secret_access_key: str = field(default_factory=lambda: _env("AWS_SECRET_ACCESS_KEY"))
+    aws_region: str = field(default_factory=lambda: _env("AWS_REGION", "ap-northeast-1"))
+
+    @property
+    def has_anthropic(self) -> bool:
+        return bool(self.anthropic_api_key)
+
+    @property
+    def has_voyage(self) -> bool:
+        return bool(self.voyage_api_key)
 
     @property
     def has_g2b(self) -> bool:
@@ -84,30 +124,30 @@ class IntegrationKeys:
     def has_notion(self) -> bool:
         return bool(self.notion_api_key and self.notion_db_bids)
 
+    @property
+    def has_bedrock(self) -> bool:
+        return bool(
+            self.aws_access_key_id
+            and self.aws_secret_access_key
+            and self.aws_region
+        )
+
 
 @dataclass
-class LLMEndpoints:
-    """Replit AI Integrations 엔드포인트. 자동 주입된 env 사용."""
-    anthropic_base_url: str = field(
-        default_factory=lambda: _env("AI_INTEGRATIONS_ANTHROPIC_BASE_URL")
+class VectorStoreConfig:
+    """ChromaDB + Voyage AI 벡터 스토어 설정."""
+    chroma_persist_dir: str = field(
+        default_factory=lambda: str(CHROMA_DB_PATH)
     )
-    anthropic_api_key: str = field(
-        default_factory=lambda: _env("AI_INTEGRATIONS_ANTHROPIC_API_KEY")
+    voyage_model: str = field(
+        default_factory=lambda: _env("VOYAGE_MODEL", "voyage-multilingual-2")
     )
-    openai_base_url: str = field(
-        default_factory=lambda: _env("AI_INTEGRATIONS_OPENAI_BASE_URL")
+    embedding_batch_size: int = field(
+        default_factory=lambda: _int_env("EMBEDDING_BATCH_SIZE", 128)
     )
-    openai_api_key: str = field(
-        default_factory=lambda: _env("AI_INTEGRATIONS_OPENAI_API_KEY")
-    )
-
-    @property
-    def has_anthropic(self) -> bool:
-        return bool(self.anthropic_base_url and self.anthropic_api_key)
-
-    @property
-    def has_openai(self) -> bool:
-        return bool(self.openai_base_url and self.openai_api_key)
+    collection_rfp: str = "rfp_documents"
+    collection_proposals: str = "reference_proposals"
+    collection_assets: str = "company_assets"
 
 
 @dataclass
@@ -115,10 +155,22 @@ class SystemConfig:
     fit_score_threshold: int = field(
         default_factory=lambda: _int_env("FIT_SCORE_THRESHOLD", 70)
     )
+    toc_similarity_threshold: float = field(
+        default_factory=lambda: float(_env("TOC_SIMILARITY_THRESHOLD", "0.90"))
+    )
+    target_pages_min: int = field(
+        default_factory=lambda: _int_env("TARGET_PAGES_MIN", 70)
+    )
+    target_pages_max: int = field(
+        default_factory=lambda: _int_env("TARGET_PAGES_MAX", 120)
+    )
     log_level: str = field(default_factory=lambda: _env("LOG_LEVEL", "INFO"))
     environment: str = field(default_factory=lambda: _env("ENVIRONMENT", "development"))
     monthly_budget_usd: int = field(
         default_factory=lambda: _int_env("MONTHLY_BUDGET_USD", 200)
+    )
+    use_bedrock: bool = field(
+        default_factory=lambda: _env("USE_BEDROCK", "false").lower() in ("true", "1", "yes")
     )
 
 
@@ -126,20 +178,18 @@ class SystemConfig:
 COMPANY = CompanyProfile()
 MODELS = ModelConfig()
 KEYS = IntegrationKeys()
-LLM = LLMEndpoints()
+VECTOR = VectorStoreConfig()
 SYS = SystemConfig()
 
 
 def apply_agent_overrides() -> None:
-    """DB에 저장된 대시보드 설정을 MODELS 싱글턴에 반영.
-    매 파이프라인 실행 직전에 호출하여 사장이 변경한 모델을 즉시 적용한다.
-    """
+    """DB에 저장된 대시보드 설정을 MODELS 싱글턴에 반영."""
     try:
-        from tools.db import get_agent_overrides  # 순환 import 방지
+        from tools.db import get_agent_overrides
         overrides = get_agent_overrides()
     except Exception:
         return
-    for key in ("kim", "lee", "park", "choi", "oh"):
+    for key in ("discovery", "analysis", "rfp_struct", "strategy", "writer", "reviewer", "graphics"):
         cfg = overrides.get(key)
         if cfg and cfg.get("model"):
             setattr(MODELS, key, cfg["model"])
@@ -154,10 +204,10 @@ def get_extra_instructions(agent_key: str) -> str:
 
 
 def get_collection_keywords() -> list[str]:
-    """김탐정 수집 키워드. DB → ENV → 기본값 순."""
+    """DiscoveryAgent 수집 키워드. DB → ENV → 기본값 순."""
     try:
         from tools.db import get_agent_overrides
-        kws = get_agent_overrides().get("kim", {}).get("keywords", [])
+        kws = get_agent_overrides().get("discovery", {}).get("keywords", [])
         if kws:
             return kws
     except Exception:
@@ -181,7 +231,6 @@ def get_effective_company() -> CompanyProfile:
                 typical_budget_min=d["typical_budget_min"] or 0,
                 typical_budget_max=d["typical_budget_max"] or 0,
             )
-            # 추가 정보 동적 부착 (dataclass 필드는 아니지만 박제안이 사용)
             cp.intro_text = d.get("intro_text", "")  # type: ignore
             cp.differentiators = d.get("differentiators", "")  # type: ignore
             cp.brochure_path = d.get("brochure_path", "")  # type: ignore
@@ -207,11 +256,15 @@ def summary() -> str:
         f"환경: {SYS.environment}",
         f"회사: {COMPANY.name} (대표 {COMPANY.ceo})",
         f"점수 임계값: {SYS.fit_score_threshold}",
-        f"Anthropic 사용 가능: {LLM.has_anthropic}",
-        f"OpenAI 사용 가능: {LLM.has_openai}",
+        f"목차 유사도 임계값: {SYS.toc_similarity_threshold}",
+        f"목표 페이지: {SYS.target_pages_min}~{SYS.target_pages_max}",
+        f"Anthropic API: {KEYS.has_anthropic}",
+        f"Bedrock 사용: {SYS.use_bedrock} (AWS keys: {KEYS.has_bedrock}, region={KEYS.aws_region})",
+        f"Voyage AI: {KEYS.has_voyage}",
         f"G2B 키 등록: {KEYS.has_g2b}",
         f"Notion 사용 가능: {KEYS.has_notion}",
         f"DB 경로: {DB_PATH}",
+        f"벡터 DB: {VECTOR.chroma_persist_dir}",
         f"산출물 경로: {OUTPUT_DIR}",
     ]
     return "\n".join(lines)

@@ -1,0 +1,12 @@
+[32m2026-04-30 13:51:05.749[0m | [1mINFO    [0m | [36mtools.db[0m:[36minit_db[0m:[36m271[0m - [1mDB 초기화 완료 → C:\Users\ykiki\Projects\AI-Proposal\proposal_ai\storage\db.sqlite[0m
+[32m2026-04-30 13:51:06.253[0m | [1mINFO    [0m | [36mrag.vector_store[0m:[36m__init__[0m:[36m54[0m - [1mVectorStore 초기화: rfp_documents (현재 0건)[0m
+[32m2026-04-30 13:51:06.507[0m | [1mINFO    [0m | [36mrag.pdf_processor[0m:[36mprocess[0m:[36m165[0m - [1mPDF 처리 시작: 조달협의_제안요청서_2026년 삭제지원시스템 기능개선 및 SW 개발.pdf[0m
+[32m2026-04-30 13:51:14.210[0m | [1mINFO    [0m | [36mrag.pdf_processor[0m:[36mprocess[0m:[36m203[0m - [1mPDF 완료: 조달협의_제안요청서_2026년 삭제지원시스템 기능개선 및 SW 개발.pdf (52페이지, 108개 챕터 → 조달협의_제안요청서_2026년 삭제지원시스템 기능개선 및 SW 개발.json)[0m
+[32m2026-04-30 13:51:14.216[0m | [1mINFO    [0m | [36mrag.vector_store[0m:[36m__init__[0m:[36m54[0m - [1mVectorStore 초기화: rfp_documents (현재 0건)[0m
+[32m2026-04-30 13:51:14.216[0m | [34m[1mDEBUG   [0m | [36mrag.embeddings[0m:[36membed_documents[0m:[36m79[0m - [34m[1m임베딩 배치 1/2 (128건)[0m
+[32m2026-04-30 13:51:19.205[0m | [34m[1mDEBUG   [0m | [36mrag.embeddings[0m:[36membed_documents[0m:[36m79[0m - [34m[1m임베딩 배치 2/2 (102건)[0m
+[32m2026-04-30 13:51:22.243[0m | [1mINFO    [0m | [36magents.base_agent[0m:[36mprogress[0m:[36m35[0m - [1m[discovery] RFP 인덱싱: smoke_001 → 230청크[0m
+bid_id        : smoke_001
+PDF           : C:\Users\ykiki\Projects\AI-Proposal\proposal_ai\data\test_rfps\조달협의_제안요청서_2026년 삭제지원시스템 기능개선 및 SW 개발.pdf
+인덱싱 청크   : 230
+DB 등록       : 신규

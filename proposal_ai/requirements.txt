@@ -1,22 +1,44 @@
-crewai>=0.70
-openai>=1.40
-anthropic>=0.40
+# Core
+anthropic[bedrock]>=0.40
 pydantic>=2.0
-python-docx>=1.1
-python-pptx>=0.6
-beautifulsoup4>=4.12
-requests>=2.31
-sqlalchemy>=2.0
-apscheduler>=3.10
 python-dotenv>=1.0
 loguru>=0.7
 tenacity>=9.0
-notion-client>=2.2
 pyyaml>=6.0
+
+# Data & Storage
+sqlalchemy>=2.0
+chromadb>=0.5
+
+# Embeddings
+voyageai>=0.3
+
+# Document Generation
+python-docx>=1.1
+python-pptx>=0.6
+pdfplumber>=0.11
+
+# Web Scraping
+beautifulsoup4>=4.12
+requests>=2.31
 lxml>=5.0
-# 선택: Korean spell checker (설치 실패 시 LLM 기반 fallback 사용)
+
+# Dashboard
+streamlit>=1.35
+pandas>=2.0
+rich>=13.0
+
+# Scheduling
+apscheduler>=3.10
+
+# Monitoring (memory usage during ingestion)
+psutil>=5.9
+
+# Integrations (optional)
+notion-client>=2.2
+
+# Optional: Korean spell checker (fallback to LLM if unavailable)
 # py-hanspell
-# 선택: 동적 페이지 크롤링이 필요할 때
+
+# Optional: dynamic page crawling
 # playwright
-streamlit==1.56.0
-pandas==3.0.2

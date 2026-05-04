@@ -1,0 +1,147 @@
+﻿
+FullName                                                                                                                  
+--------                                                                                                                  
+C:\Users\ykiki\Projects\AI-Proposal\.gitignore                                                                            
+C:\Users\ykiki\Projects\AI-Proposal\project_tree.txt                                                                      
+C:\Users\ykiki\Projects\AI-Proposal\README.md                                                                             
+C:\Users\ykiki\Projects\AI-Proposal\proposal_ai\.env                                                                      
+C:\Users\ykiki\Projects\AI-Proposal\proposal_ai\.env.example                                                              
+C:\Users\ykiki\Projects\AI-Proposal\proposal_ai\.gitignore                                                                
+C:\Users\ykiki\Projects\AI-Proposal\proposal_ai\main.py                                                                   
+C:\Users\ykiki\Projects\AI-Proposal\proposal_ai\MIGRATION_PLAN.md                                                         
+C:\Users\ykiki\Projects\AI-Proposal\proposal_ai\README.md                                                                 
+C:\Users\ykiki\Projects\AI-Proposal\proposal_ai\requirements.txt                                                          
+C:\Users\ykiki\Projects\AI-Proposal\proposal_ai\.claude\scheduled_tasks.lock                                              
+C:\Users\ykiki\Projects\AI-Proposal\proposal_ai\.claude\settings.local.json                                               
+C:\Users\ykiki\Projects\AI-Proposal\proposal_ai\.streamlit\config.toml                                                    
+C:\Users\ykiki\Projects\AI-Proposal\proposal_ai\agents\analysis_agent.py                                                  
+C:\Users\ykiki\Projects\AI-Proposal\proposal_ai\agents\base_agent.py                                                      
+C:\Users\ykiki\Projects\AI-Proposal\proposal_ai\agents\discovery_agent.py                                                 
+C:\Users\ykiki\Projects\AI-Proposal\proposal_ai\agents\graphics_agent.py                                                  
+C:\Users\ykiki\Projects\AI-Proposal\proposal_ai\agents\reviewer_agent.py                                                  
+C:\Users\ykiki\Projects\AI-Proposal\proposal_ai\agents\strategy_agent.py                                                  
+C:\Users\ykiki\Projects\AI-Proposal\proposal_ai\agents\writer_agent.py                                                    
+C:\Users\ykiki\Projects\AI-Proposal\proposal_ai\agents\__init__.py                                                        
+C:\Users\ykiki\Projects\AI-Proposal\proposal_ai\config\agency_selectors.yaml                                              
+C:\Users\ykiki\Projects\AI-Proposal\proposal_ai\config\scoring_rubric.yaml                                                
+C:\Users\ykiki\Projects\AI-Proposal\proposal_ai\config\settings.py                                                        
+C:\Users\ykiki\Projects\AI-Proposal\proposal_ai\config\specialists.yaml                                                   
+C:\Users\ykiki\Projects\AI-Proposal\proposal_ai\config\__init__.py                                                        
+C:\Users\ykiki\Projects\AI-Proposal\proposal_ai\dashboard\app.py                                                          
+C:\Users\ykiki\Projects\AI-Proposal\proposal_ai\dashboard\pages\1_공고_수집_평가.py                                             
+C:\Users\ykiki\Projects\AI-Proposal\proposal_ai\dashboard\pages\2_전략_작성.py                                                
+C:\Users\ykiki\Projects\AI-Proposal\proposal_ai\dashboard\pages\3_검수_시각화.py                                               
+C:\Users\ykiki\Projects\AI-Proposal\proposal_ai\dashboard\pages\4_설정.py                                                   
+C:\Users\ykiki\Projects\AI-Proposal\proposal_ai\dashboard\pages\__init__.py                                               
+C:\Users\ykiki\Projects\AI-Proposal\proposal_ai\data\README.md                                                            
+C:\Users\ykiki\Projects\AI-Proposal\proposal_ai\data\chroma_db\chroma.sqlite3                                             
+C:\Users\ykiki\Projects\AI-Proposal\proposal_ai\data\chroma_db\263180d2-9345-4e9a-9a6a-ba1b9114df80\data_level0.bin       
+C:\Users\ykiki\Projects\AI-Proposal\proposal_ai\data\chroma_db\263180d2-9345-4e9a-9a6a-ba1b9114df80\header.bin            
+C:\Users\ykiki\Projects\AI-Proposal\proposal_ai\data\chroma_db\263180d2-9345-4e9a-9a6a-ba1b9114df80\index_metadata.pickle 
+C:\Users\ykiki\Projects\AI-Proposal\proposal_ai\data\chroma_db\263180d2-9345-4e9a-9a6a-ba1b9114df80\length.bin            
+C:\Users\ykiki\Projects\AI-Proposal\proposal_ai\data\chroma_db\263180d2-9345-4e9a-9a6a-ba1b9114df80\link_lists.bin        
+C:\Users\ykiki\Projects\AI-Proposal\proposal_ai\data\chroma_db\5664e601-fc9d-4d3f-845e-1ee0fa14278d\data_level0.bin       
+C:\Users\ykiki\Projects\AI-Proposal\proposal_ai\data\chroma_db\5664e601-fc9d-4d3f-845e-1ee0fa14278d\header.bin            
+C:\Users\ykiki\Projects\AI-Proposal\proposal_ai\data\chroma_db\5664e601-fc9d-4d3f-845e-1ee0fa14278d\length.bin            
+C:\Users\ykiki\Projects\AI-Proposal\proposal_ai\data\chroma_db\5664e601-fc9d-4d3f-845e-1ee0fa14278d\link_lists.bin        
+C:\Users\ykiki\Projects\AI-Proposal\proposal_ai\data\chroma_db\6b65779d-c994-4b7f-a133-98fad9eb2e9d\data_level0.bin       
+C:\Users\ykiki\Projects\AI-Proposal\proposal_ai\data\chroma_db\6b65779d-c994-4b7f-a133-98fad9eb2e9d\header.bin            
+C:\Users\ykiki\Projects\AI-Proposal\proposal_ai\data\chroma_db\6b65779d-c994-4b7f-a133-98fad9eb2e9d\length.bin            
+C:\Users\ykiki\Projects\AI-Proposal\proposal_ai\data\chroma_db\6b65779d-c994-4b7f-a133-98fad9eb2e9d\link_lists.bin        
+C:\Users\ykiki\Projects\AI-Proposal\proposal_ai\data\chroma_db_broken_20260430\chroma.sqlite3                             
+C:\Users\ykiki\Projects\AI-Proposal\proposal_ai\data\chroma_db_broken_20260430\README.md                                  
+C:\Users\ykiki\Projects\AI-Proposal\proposal_ai\data\processed\2026 서울 MICE 홈페이지 및 종합지원시스템 통합 유지보수 용역_기술제안서_원본.json       
+C:\Users\ykiki\Projects\AI-Proposal\proposal_ai\data\processed\2026년 내친구서울 누리집 재개발 용역_기술제안서_원본.json                       
+C:\Users\ykiki\Projects\AI-Proposal\proposal_ai\data\processed\README.md                                                  
+C:\Users\ykiki\Projects\AI-Proposal\proposal_ai\data\processed\[경찰청] 스마트워크시스템 고도화 사업 제안_발표자료_GD_완_v10.json                
+C:\Users\ykiki\Projects\AI-Proposal\proposal_ai\data\processed\[정성제안서]KYWA 대표홈페이지 유지보수 용역_v1.0.json                       
+C:\Users\ykiki\Projects\AI-Proposal\proposal_ai\data\processed\조달협의_제안요청서_2026년 삭제지원시스템 기능개선 및 SW 개발.json                 
+C:\Users\ykiki\Projects\AI-Proposal\proposal_ai\data\test_rfps\README.md                                                  
+C:\Users\ykiki\Projects\AI-Proposal\proposal_ai\data\test_rfps\조달협의_제안요청서_2026년 삭제지원시스템 기능개선 및 SW 개발.pdf                  
+C:\Users\ykiki\Projects\AI-Proposal\proposal_ai\data\winning_proposals\2026 서울 MICE 홈페이지 및 종합지원시스템 통합 유지보수 용역_기술제안서_원본.pdf
+C:\Users\ykiki\Projects\AI-Proposal\proposal_ai\data\winning_proposals\2026년 내친구서울 누리집 재개발 용역_기술제안서_원본.pdf                
+C:\Users\ykiki\Projects\AI-Proposal\proposal_ai\data\winning_proposals\26년 SKT 데보션 사이트 개편 및 운영_제안서_크림하우스(주)_v1.0_260130...
+C:\Users\ykiki\Projects\AI-Proposal\proposal_ai\data\winning_proposals\README.md                                          
+C:\Users\ykiki\Projects\AI-Proposal\proposal_ai\data\winning_proposals\T world 프렌즈 서비스 운영사 선정_제안서_크림하우스(주)_v0.7.pdf       
+C:\Users\ykiki\Projects\AI-Proposal\proposal_ai\data\winning_proposals\[경찰청] 스마트워크시스템 고도화 사업 제안_발표자료_GD_완_v10.pdf         
+C:\Users\ykiki\Projects\AI-Proposal\proposal_ai\data\winning_proposals\[발표자료]KYWA 대표홈페이지 유지보수 용역_최종본.pdf                  
+C:\Users\ykiki\Projects\AI-Proposal\proposal_ai\data\winning_proposals\[정성제안서]KYWA 대표홈페이지 유지보수 용역_v1.0.pdf                
+C:\Users\ykiki\Projects\AI-Proposal\proposal_ai\data\winning_proposals_pptx\2026 서울 MICE 홈페이지 및 종합지원시스템 통합 유지보수 용역_기술제안...
+C:\Users\ykiki\Projects\AI-Proposal\proposal_ai\data\winning_proposals_pptx\2026년 내친구서울 누리집 재개발 용역_기술제안서_원본.pptx          
+C:\Users\ykiki\Projects\AI-Proposal\proposal_ai\data\winning_proposals_pptx\26년 SKT 데보션 사이트 개편 및 운영_제안서_크림하우스(주)_v1.0_2...
+C:\Users\ykiki\Projects\AI-Proposal\proposal_ai\data\winning_proposals_pptx\README.md                                     
+C:\Users\ykiki\Projects\AI-Proposal\proposal_ai\data\winning_proposals_pptx\T world 프렌즈 서비스 운영사 선정_제안서_크림하우스(주)_v0.7.pptx 
+C:\Users\ykiki\Projects\AI-Proposal\proposal_ai\data\winning_proposals_pptx\[경찰청] 스마트워크시스템 고도화 사업 제안_발표자료_GD_완_v10.pptx   
+C:\Users\ykiki\Projects\AI-Proposal\proposal_ai\data\winning_proposals_pptx\[발표자료]KYWA 대표홈페이지 유지보수 용역_최종본.pptx            
+C:\Users\ykiki\Projects\AI-Proposal\proposal_ai\data\winning_proposals_pptx\[정성제안서]KYWA 대표홈페이지 유지보수 용역_v1.0.pptx          
+C:\Users\ykiki\Projects\AI-Proposal\proposal_ai\rag\chunker.py                                                            
+C:\Users\ykiki\Projects\AI-Proposal\proposal_ai\rag\embeddings.py                                                         
+C:\Users\ykiki\Projects\AI-Proposal\proposal_ai\rag\ingest.py                                                             
+C:\Users\ykiki\Projects\AI-Proposal\proposal_ai\rag\pdf_processor.py                                                      
+C:\Users\ykiki\Projects\AI-Proposal\proposal_ai\rag\pptx_processor.py                                                     
+C:\Users\ykiki\Projects\AI-Proposal\proposal_ai\rag\retrieve.py                                                           
+C:\Users\ykiki\Projects\AI-Proposal\proposal_ai\rag\vector_store.py                                                       
+C:\Users\ykiki\Projects\AI-Proposal\proposal_ai\rag\__init__.py                                                           
+C:\Users\ykiki\Projects\AI-Proposal\proposal_ai\schemas\models.py                                                         
+C:\Users\ykiki\Projects\AI-Proposal\proposal_ai\schemas\rfp_schema.py                                                     
+C:\Users\ykiki\Projects\AI-Proposal\proposal_ai\schemas\__init__.py                                                       
+C:\Users\ykiki\Projects\AI-Proposal\proposal_ai\scripts\b2_step1_register.log                                             
+C:\Users\ykiki\Projects\AI-Proposal\proposal_ai\scripts\b2_step2_analyze.log                                              
+C:\Users\ykiki\Projects\AI-Proposal\proposal_ai\scripts\check_status.py                                                   
+C:\Users\ykiki\Projects\AI-Proposal\proposal_ai\scripts\ingest_b1.log                                                     
+C:\Users\ykiki\Projects\AI-Proposal\proposal_ai\scripts\ingest_b1_step3.log                                               
+C:\Users\ykiki\Projects\AI-Proposal\proposal_ai\scripts\ingest_b1_step3_final.log                                         
+C:\Users\ykiki\Projects\AI-Proposal\proposal_ai\scripts\ingest_b1_step3_retry.log                                         
+C:\Users\ykiki\Projects\AI-Proposal\proposal_ai\scripts\ingest_b1_step4_5.log                                             
+C:\Users\ykiki\Projects\AI-Proposal\proposal_ai\scripts\ingest_public_only.py                                             
+C:\Users\ykiki\Projects\AI-Proposal\proposal_ai\scripts\ingest_public_safe.py                                             
+C:\Users\ykiki\Projects\AI-Proposal\proposal_ai\scripts\register_local_rfp.py                                             
+C:\Users\ykiki\Projects\AI-Proposal\proposal_ai\scripts\test_rag.py                                                       
+C:\Users\ykiki\Projects\AI-Proposal\proposal_ai\scripts\__init__.py                                                       
+C:\Users\ykiki\Projects\AI-Proposal\proposal_ai\storage\db.sqlite                                                         
+C:\Users\ykiki\Projects\AI-Proposal\proposal_ai\storage\masters\.gitkeep                                                  
+C:\Users\ykiki\Projects\AI-Proposal\proposal_ai\storage\masters\master_corporate_navy.pptx                                
+C:\Users\ykiki\Projects\AI-Proposal\proposal_ai\storage\masters\master_innovation_orange.pptx                             
+C:\Users\ykiki\Projects\AI-Proposal\proposal_ai\storage\masters\master_minimal_white.pptx                                 
+C:\Users\ykiki\Projects\AI-Proposal\proposal_ai\storage\outputs\.gitkeep                                                  
+C:\Users\ykiki\Projects\AI-Proposal\proposal_ai\storage\outputs\R26BK01458487_proposal_v1.docx                            
+C:\Users\ykiki\Projects\AI-Proposal\proposal_ai\storage\outputs\R26BK01458535_proposal_v1.docx                            
+C:\Users\ykiki\Projects\AI-Proposal\proposal_ai\storage\outputs\R26BK01458535_pt.pptx                                     
+C:\Users\ykiki\Projects\AI-Proposal\proposal_ai\storage\outputs\R26BK01463497_proposal_v1.docx                            
+C:\Users\ykiki\Projects\AI-Proposal\proposal_ai\storage\outputs\R26BK01463497_pt.pptx                                     
+C:\Users\ykiki\Projects\AI-Proposal\proposal_ai\storage\outputs\R26BK01465606_proposal_v1.docx                            
+C:\Users\ykiki\Projects\AI-Proposal\proposal_ai\storage\outputs\R26BK01471791_proposal_v1.docx                            
+C:\Users\ykiki\Projects\AI-Proposal\proposal_ai\storage\outputs\R26BK01471791_pt_v1.pptx                                  
+C:\Users\ykiki\Projects\AI-Proposal\proposal_ai\storage\outputs\R26BK01471908_proposal_v1.docx                            
+C:\Users\ykiki\Projects\AI-Proposal\proposal_ai\storage\outputs\R26BK01471908_pt_v1.pptx                                  
+C:\Users\ykiki\Projects\AI-Proposal\proposal_ai\storage\outputs\TEST-DOCX_proposal_v1.docx                                
+C:\Users\ykiki\Projects\AI-Proposal\proposal_ai\storage\outputs\TEST-PPTX_pt.pptx                                         
+C:\Users\ykiki\Projects\AI-Proposal\proposal_ai\storage\outputs\TEST-V2_pt_v1.pptx                                        
+C:\Users\ykiki\Projects\AI-Proposal\proposal_ai\storage\outputs\TEST123_pt.pptx                                           
+C:\Users\ykiki\Projects\AI-Proposal\proposal_ai\storage\proposals\.gitkeep                                                
+C:\Users\ykiki\Projects\AI-Proposal\proposal_ai\tests\test_agents.py                                                      
+C:\Users\ykiki\Projects\AI-Proposal\proposal_ai\tools\acceptance_table.py                                                 
+C:\Users\ykiki\Projects\AI-Proposal\proposal_ai\tools\agency_crawler.py                                                   
+C:\Users\ykiki\Projects\AI-Proposal\proposal_ai\tools\db.py                                                               
+C:\Users\ykiki\Projects\AI-Proposal\proposal_ai\tools\docx_generator.py                                                   
+C:\Users\ykiki\Projects\AI-Proposal\proposal_ai\tools\g2b_api.py                                                          
+C:\Users\ykiki\Projects\AI-Proposal\proposal_ai\tools\korean_checker.py                                                   
+C:\Users\ykiki\Projects\AI-Proposal\proposal_ai\tools\llm_client.py                                                       
+C:\Users\ykiki\Projects\AI-Proposal\proposal_ai\tools\notion_client.py                                                    
+C:\Users\ykiki\Projects\AI-Proposal\proposal_ai\tools\pptx_builder.py                                                     
+C:\Users\ykiki\Projects\AI-Proposal\proposal_ai\tools\pptx_generator.py                                                   
+C:\Users\ykiki\Projects\AI-Proposal\proposal_ai\tools\pptx_master_builder.py                                              
+C:\Users\ykiki\Projects\AI-Proposal\proposal_ai\tools\pptx_themes.py                                                      
+C:\Users\ykiki\Projects\AI-Proposal\proposal_ai\tools\rfp_analyzer.py                                                     
+C:\Users\ykiki\Projects\AI-Proposal\proposal_ai\tools\rfp_extractor.py                                                    
+C:\Users\ykiki\Projects\AI-Proposal\proposal_ai\tools\rfp_parser.py                                                       
+C:\Users\ykiki\Projects\AI-Proposal\proposal_ai\tools\rfp_section_guide.py                                                
+C:\Users\ykiki\Projects\AI-Proposal\proposal_ai\tools\rfp_toc_extractor.py                                                
+C:\Users\ykiki\Projects\AI-Proposal\proposal_ai\tools\script_generator.py                                                 
+C:\Users\ykiki\Projects\AI-Proposal\proposal_ai\tools\storyboard_generator.py                                             
+C:\Users\ykiki\Projects\AI-Proposal\proposal_ai\tools\__init__.py                                                         
+C:\Users\ykiki\Projects\AI-Proposal\proposal_ai\workflows\human_gates.py                                                  
+C:\Users\ykiki\Projects\AI-Proposal\proposal_ai\workflows\pipeline.py                                                     
+C:\Users\ykiki\Projects\AI-Proposal\proposal_ai\workflows\__init__.py                                                     
+
+

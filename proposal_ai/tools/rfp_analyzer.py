@@ -8,7 +8,7 @@ from __future__ import annotations
 from loguru import logger
 
 from config.settings import MODELS
-from tools.llm_clients import chat_anthropic
+from tools.llm_client import chat_anthropic
 
 SYSTEM_PROMPT = """당신은 한국 공공·민간 제안서 컨설턴트입니다.
 RFP 원문을 읽고 중소기업 대표 관점에서 '들어가기 전에 반드시 확인할 항목'을 정리합니다.
@@ -112,8 +112,8 @@ def analyze_rfp(bid) -> str:
         rfp_text=rfp_text[:14000],
     )
     try:
-        # 박제안과 동일 모델(분석력 우선) — 6항목 추가로 출력 분량 늘어 max_tokens 상향
-        return chat_anthropic(MODELS.park, SYSTEM_PROMPT, user, max_tokens=6000)
+        # WriterAgent와 동일 모델(분석력 우선) — 6항목 추가로 출력 분량 늘어 max_tokens 상향
+        return chat_anthropic(MODELS.writer, SYSTEM_PROMPT, user, max_tokens=6000)
     except Exception as e:
         logger.error(f"심층 분석 실패: {e}")
         return f"_심층 분석 호출 실패: {e}_"

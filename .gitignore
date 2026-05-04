@@ -31,4 +31,12 @@
   # Logs / tmp
   *.log
   tmp/
-  
+
+  # Data: actual data files (keep README.md tracked, exclude real data)
+  proposal_ai/data/winning_proposals/*.pdf
+  proposal_ai/data/winning_proposals_pptx/*.pptx
+  proposal_ai/data/winning_proposals_pptx/*.ppt
+  proposal_ai/data/test_rfps/*.pdf
+  proposal_ai/data/processed/
+  proposal_ai/data/chroma_db/
+  proposal_ai/data/_archive/

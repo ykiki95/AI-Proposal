@@ -1,0 +1,5 @@
+[32m13:51:42[0m | [1mINFO   [0m | DB 초기화 완료 → C:\Users\ykiki\Projects\AI-Proposal\proposal_ai\storage\db.sqlite
+[32m13:51:42[0m | [1mINFO   [0m | [analysis] 평가 대상 1건 (model=claude-sonnet-4-6, 자동 승급 상한 20)
+[32m13:51:44[0m | [31m[1mERROR  [0m | [analysis] 평가 실패 (smoke_001): RetryError[<Future at 0x21d5addad50 state=finished raised BadRequestError>]
+[32m13:51:44[0m | [1mINFO   [0m | [analysis] 평가 완료: 0건 채점, 게이트1 자동 진입 0건 (임계 70점)
+평가 완료: 0건

@@ -1,0 +1,74 @@
+======================================================================
+ smoke run wrapper — smoke_001
+ 시작: 2026-05-04T17:56:27.681866
+ 로그: C:\Users\ykiki\Projects\AI-Proposal\proposal_ai\storage\logs\smoke_run_smoke_001_20260504_175627.log
+======================================================================
+
+기존 산출물 5개 백업 → C:\Users\ykiki\Projects\AI-Proposal\proposal_ai\storage\outputs\_backup_20260504_175627
+
+======================================================================
+ [0/7] preflight   (환경/DB/ChromaDB 검증)
+======================================================================
+  USE_BEDROCK         : True
+  has_bedrock         : True
+  AWS region          : ap-northeast-1
+  Bedrock 매핑:
+    claude-opus-4-7                  → jp.anthropic.claude-sonnet-4-5-20250929-v1:0
+    claude-sonnet-4-6                → jp.anthropic.claude-sonnet-4-5-20250929-v1:0
+    claude-haiku-4-5-20251001        → jp.anthropic.claude-haiku-4-5-20251001-v1:0
+  bid smoke_001       : status=수집완료
+  ChromaDB (rfp_documents): 230건
+  → 완료 (0.6s)
+
+======================================================================
+ [1/7] analyze + 게이트1 승인   (예상 ~$0.01-0.05, 1-2분)
+======================================================================
+  평가 1건 (대상 smoke_001: 1건)
+  smoke_001 상태 (analyze 후): 평가완료
+  게이트1 자동 승인: smoke_001 → APPROVED
+  → 완료 (11.7s)
+
+======================================================================
+ [2/7] strategize   (예상 ~$0.05-0.15, 2-5분)
+======================================================================
+  전략 산출 1건
+  → 완료 (3m 42s)
+
+======================================================================
+ [3/7] write   (예상 ~$0.20-0.40, 5-15분 ⭐ 가장 비싼 단계)
+======================================================================
+ 58점 (조건부)
+17:56:40.332 | INFO    | agents.base_agent:progress:35 | [analysis] 평가 완료: 1건 채점, 게이트1 자동 진입 0건 (임계 70점)
+17:56:40.344 | WARNING | __main__:_do_analyze:501 | 점수 미달로 AWAITING_APPROVAL 미진입 → 강제 승급 (smoke 통과 우선)
+17:56:40.369 | DEBUG   | workflows.human_gates:sync_approvals_from_notion:22 | [gate-1] Notion 미설정 → 수동 승인 모드
+17:56:40.382 | INFO    | agents.base_agent:progress:35 | [strategy] 전략 수립 시작: smoke_001 (model=claude-opus-4-7)
+17:57:50.432 | DEBUG   | tools.llm_client:chat:172 | [anthropic:claude-sonnet-4-6] in=18944 out=4262 cache_read=0 cache_create=0
+17:57:50.433 | INFO    | tools.rfp_toc_extractor:extract_rfp_toc:288 | [rfp_toc_extractor] 7챕터 추출 (총 98p, sub 27개)
+17:57:50.433 | INFO    | agents.base_agent:progress:35 | [strategy] TOC 추출 완료: 7챕터, 목표 98p
+17:57:50.433 | DEBUG   | tools.llm_client:chat:135 | [bedrock] cache_system disabled (호환성)
+17:59:49.820 | DEBUG   | tools.llm_client:chat:172 | [anthropic:claude-opus-4-7] in=18206 out=10162 cache_read=0 cache_create=0
+17:59:49.821 | INFO    | agents.base_agent:progress:35 | [strategy] 요구사항 73건 / 평가기준 2건 추출
+17:59:50.292 | INFO    | rag.vector_store:__init__:54 | VectorStore 초기화: reference_proposals (현재 671건)
+17:59:50.761 | DEBUG   | rag.retrieve:retrieve:66 | 검색 완료: '2026년 삭제지원시스템 기능개선 및 SW 개발 한국여성인권진흥원 차별화 win theme' → 5건
+17:59:50.761 | DEBUG   | tools.llm_client:chat:135 | [bedrock] cache_system disabled (호환성)
+18:00:21.986 | DEBUG   | tools.llm_client:chat:172 | [anthropic:claude-opus-4-7] in=10190 out=1619 cache_read=0 cache_create=0
+18:00:21.987 | INFO    | agents.base_agent:progress:35 | [strategy] 전략 메모 도출 완료
+18:00:22.017 | INFO    | agents.base_agent:progress:35 | [strategy] 전략 산출물 저장: smoke_001.json
+18:00:22.047 | INFO    | agents.base_agent:progress:35 | [writer] 작성 시작: smoke_001 v1 (7챕터, model=claude-opus-4-7)
+18:00:22.056 | DEBUG   | tools.llm_client:chat:135 | [bedrock] cache_system disabled (호환성)
+18:00:22.061 | DEBUG   | tools.llm_client:chat:135 | [bedrock] cache_system disabled (호환성)
+18:00:22.062 | DEBUG   | tools.llm_client:chat:135 | [bedrock] cache_system disabled (호환성)
+18:01:57.835 | DEBUG   | tools.llm_client:chat:172 | [anthropic:claude-opus-4-7] in=22832 out=6000 cache_read=0 cache_create=0
+18:01:57.856 | DEBUG   | tools.llm_client:chat:135 | [bedrock] cache_system disabled (호환성)
+18:02:17.652 | DEBUG   | tools.llm_client:chat:172 | [anthropic:claude-opus-4-7] in=23436 out=9000 cache_read=0 cache_create=0
+18:02:18.707 | DEBUG   | tools.llm_client:chat:135 | [bedrock] cache_system disabled (호환성)
+18:02:47.504 | DEBUG   | tools.llm_client:chat:172 | [anthropic:claude-opus-4-7] in=21264 out=9000 cache_read=0 cache_create=0
+18:02:47.522 | DEBUG   | tools.llm_client:chat:135 | [bedrock] cache_system disabled (호환성)
+18:03:44.023 | DEBUG   | tools.llm_client:chat:172 | [anthropic:claude-opus-4-7] in=22840 out=7500 cache_read=0 cache_create=0
+18:03:44.041 | DEBUG   | tools.llm_client:chat:135 | [bedrock] cache_system disabled (호환성)
+18:04:49.083 | DEBUG   | tools.llm_client:chat:172 | [anthropic:claude-opus-4-7] in=23432 out=10500 cache_read=0 cache_create=0
+18:04:49.100 | DEBUG   | tools.llm_client:chat:135 | [bedrock] cache_system disabled (호환성)
+18:05:06.046 | DEBUG   | tools.llm_client:chat:172 | [anthropic:claude-opus-4-7] in=21260 out=9000 cache_read=0 cache_create=0
+18:05:06.060 | DEBUG   | tools.llm_client:chat:135 | [bedrock] cache_system disabled (호환성)
+18:05:24.683 | DEBUG   | tools.llm_client:chat:172 | [anthropic:claude-opus-4-7] in=22841 out=6000 cache_read=0 cache_create=0
+18:05:24.696 | DEBUG   | tools.llm_client:chat:135 | [bedrock] cache_system disabled (호환성)

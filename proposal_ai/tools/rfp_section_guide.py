@@ -14,7 +14,7 @@ from typing import Dict, List
 from loguru import logger
 
 from config.settings import MODELS
-from tools.llm_clients import chat_anthropic
+from tools.llm_client import chat_anthropic
 
 
 SPECIALTY_DESCRIPTIONS: List[Dict[str, str]] = [
@@ -126,7 +126,7 @@ def extract_section_guides(bid) -> Dict[str, str]:
 
     try:
         raw = chat_anthropic(
-            MODELS.park,
+            MODELS.writer,
             SYSTEM_PROMPT,
             _user_prompt(bid),
             max_tokens=2500,

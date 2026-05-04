@@ -29,7 +29,7 @@ from pptx.util import Inches, Pt
 
 from config.settings import MODELS, OUTPUT_DIR, get_effective_company
 from schemas.models import BidNotice, ProposalDraft
-from tools.llm_clients import chat_anthropic
+from tools.llm_client import chat_anthropic
 from tools.pptx_generator import _palette  # 디자인 팔레트 재사용
 
 WHITE = RGBColor(0xFF, 0xFF, 0xFF)
@@ -99,10 +99,10 @@ def _build_prompt(bid: BidNotice, draft: ProposalDraft, rfp_outline: str) -> str
 def _ask_llm(bid: BidNotice, draft: ProposalDraft) -> List[dict]:
     rfp_outline = (bid.rfp_full_text or bid.rfp_summary or "")[:3000]
     raw = chat_anthropic(
-        MODELS.park,
+        MODELS.writer,
         SYSTEM_PROMPT,
         _build_prompt(bid, draft, rfp_outline),
-        max_tokens=8000,
+        max_tokens=16000,
     )
     m = re.search(r"\[.*\]", raw, re.S)
     if not m:

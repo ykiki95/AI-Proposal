@@ -26,12 +26,23 @@ from pptx.enum.text import PP_ALIGN
 from pptx.util import Inches, Pt
 
 from config.settings import OUTPUT_DIR, get_effective_company
-from schemas.models import BidNotice, DesignBrief, ProposalDraft
+from schemas.models import BidNotice, DesignBrief, LayoutMode, ProposalDraft
 from tools.pptx_themes import THEMES, Theme, get_theme, hex_to_rgb
 
 WHITE = RGBColor(0xFF, 0xFF, 0xFF)
+
+# 기본은 landscape 16:9 (민간형). PORTRAIT는 A4 비율(7.5×10).
 SLIDE_W = Inches(13.33)
 SLIDE_H = Inches(7.5)
+SLIDE_W_PORTRAIT = Inches(7.5)
+SLIDE_H_PORTRAIT = Inches(10)
+
+
+def _slide_dims(brief: DesignBrief):
+    """DesignBrief.layout_mode → (width, height) Inches."""
+    if brief.layout_mode == LayoutMode.PORTRAIT:
+        return SLIDE_W_PORTRAIT, SLIDE_H_PORTRAIT
+    return SLIDE_W, SLIDE_H
 
 
 def _solid(shape, color: RGBColor) -> None:
@@ -72,7 +83,12 @@ def _theme_with_accent(brief: DesignBrief) -> Theme:
 
 
 def _new_presentation(brief: DesignBrief) -> Presentation:
-    """사용자 마스터 .pptx 가 있으면 그걸 기반으로, 없으면 빈 Presentation."""
+    """사용자 마스터 .pptx 가 있으면 그걸 기반으로, 없으면 빈 Presentation.
+    DesignBrief.layout_mode에 따라 슬라이드 크기를 가로형/세로형으로 분기.
+    NOTE: 기본 렌더러 좌표는 landscape 13.33×7.5 기준이라 PORTRAIT는 minimum viable
+    (캔버스만 세로) — 위치 미세조정은 후속 작업에서.
+    """
+    width, height = _slide_dims(brief)
     if brief.master_path and Path(brief.master_path).exists():
         try:
             prs = Presentation(brief.master_path)
@@ -80,15 +96,18 @@ def _new_presentation(brief: DesignBrief) -> Presentation:
             xml_slides = prs.slides._sldIdLst
             for sld in list(xml_slides):
                 xml_slides.remove(sld)
-            prs.slide_width = SLIDE_W
-            prs.slide_height = SLIDE_H
-            logger.info(f"마스터 베이스 사용: {brief.master_path}")
+            prs.slide_width = width
+            prs.slide_height = height
+            logger.info(
+                f"마스터 베이스 사용: {brief.master_path} "
+                f"({brief.layout_mode.value})"
+            )
             return prs
         except Exception as e:
             logger.warning(f"마스터 로드 실패 ({brief.master_path}) → 빈 Presentation: {e}")
     prs = Presentation()
-    prs.slide_width = SLIDE_W
-    prs.slide_height = SLIDE_H
+    prs.slide_width = width
+    prs.slide_height = height
     return prs
 
 

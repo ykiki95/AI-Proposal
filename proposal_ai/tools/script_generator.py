@@ -24,7 +24,7 @@ from loguru import logger
 
 from config.settings import MODELS, OUTPUT_DIR, get_effective_company
 from schemas.models import BidNotice, ProposalDraft
-from tools.llm_clients import chat_anthropic
+from tools.llm_client import chat_anthropic
 
 SYSTEM_PROMPT = """당신은 한국 공공·민간 입찰 PT를 100건 이상 직접 발표한 시니어 사업개발 임원입니다.
 박제안 팀의 본문과 최피티의 슬라이드 흐름을 받아, 사장님이 리허설 때 보고 암기할 발표 시나리오를 작성합니다.
@@ -111,7 +111,7 @@ def _build_prompt(bid: BidNotice, draft: ProposalDraft, minutes: int) -> str:
 
 def _ask_llm(bid: BidNotice, draft: ProposalDraft, minutes: int) -> str:
     return chat_anthropic(
-        MODELS.park,
+        MODELS.writer,
         SYSTEM_PROMPT,
         _build_prompt(bid, draft, minutes),
         max_tokens=8000,

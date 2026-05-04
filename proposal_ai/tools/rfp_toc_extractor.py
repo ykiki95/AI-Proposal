@@ -40,7 +40,7 @@ from typing import Dict, List, Optional, Tuple
 from loguru import logger
 
 from config.settings import MODELS
-from tools.llm_clients import chat_anthropic
+from tools.llm_client import chat_anthropic
 
 
 # 8명 base specialty key (park_team SPECIALISTS와 동기화)
@@ -235,7 +235,7 @@ def extract_rfp_toc(bid) -> Tuple[List[dict], dict]:
 
     try:
         raw = chat_anthropic(
-            MODELS.park,
+            MODELS.rfp_struct,
             SYSTEM_PROMPT,
             _user_prompt(bid),
             max_tokens=6000,

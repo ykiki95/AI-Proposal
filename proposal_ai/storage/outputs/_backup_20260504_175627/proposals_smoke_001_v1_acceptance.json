@@ -1,0 +1,834 @@
+{
+  "bid_id": "smoke_001",
+  "version": 1,
+  "items": [
+    {
+      "req_id": "REQ-001",
+      "requirement_summary": "시스템은 1일 24시간, 365일 상시 운영이 가능해야 하며, 구축 완료 후 성능저하 등 문제발생 시 해결방안을 제시해야 한다.",
+      "acceptance_status": "부분수용",
+      "proposal_section": "(매핑 필요)",
+      "proposal_page_hint": null,
+      "response_summary": "",
+      "reviewer_note": ""
+    },
+    {
+      "req_id": "REQ-002",
+      "requirement_summary": "운영 중인 삭제지원시스템과 연계 및 상호운용성에 문제가 없음을 제시하고, 다양한 프로토콜 지원(http, https, svn, VPN 등)하며, 향후 사용자의 증가와 업무추가 등에",
+      "acceptance_status": "부분수용",
+      "proposal_section": "(매핑 필요)",
+      "proposal_page_hint": null,
+      "response_summary": "",
+      "reviewer_note": ""
+    },
+    {
+      "req_id": "REQ-003",
+      "requirement_summary": "지역 디성센터에서 자체 서버 환경에 설치하여 운영할 수 있는 설치형(On-Premise) 시스템을 구축하여야 한다.",
+      "acceptance_status": "부분수용",
+      "proposal_section": "(매핑 필요)",
+      "proposal_page_hint": null,
+      "response_summary": "",
+      "reviewer_note": ""
+    },
+    {
+      "req_id": "REQ-004",
+      "requirement_summary": "중앙디성에서 정의한 삭제지원 업무 정책, 업무 절차 및 기준을 시스템적으로 반영하여 지자체 간 업무 처리 방식이 동일하게 적용되어야 한다.",
+      "acceptance_status": "부분수용",
+      "proposal_section": "(매핑 필요)",
+      "proposal_page_hint": null,
+      "response_summary": "",
+      "reviewer_note": ""
+    },
+    {
+      "req_id": "REQ-005",
+      "requirement_summary": "지역디성은 시스템을 통해 독립적으로 업무를 수행하되, 상담 및 삭제지원 등 주요 업무 프로세스는 중앙디성 기준을 필수적으로 준수하도록 설계되어야 한다.",
+      "acceptance_status": "부분수용",
+      "proposal_section": "(매핑 필요)",
+      "proposal_page_hint": null,
+      "response_summary": "",
+      "reviewer_note": ""
+    },
+    {
+      "req_id": "REQ-006",
+      "requirement_summary": "중앙디성의 운영정책 또는 업무 기준 변경 시, 해당 기준이 시스템 운영에 반영될 수 있도록 관리 및 적용 구조를 제공하여야 한다.",
+      "acceptance_status": "부분수용",
+      "proposal_section": "(매핑 필요)",
+      "proposal_page_hint": null,
+      "response_summary": "",
+      "reviewer_note": ""
+    },
+    {
+      "req_id": "REQ-007",
+      "requirement_summary": "시스템은 지역 디성 운영기기의 운영체제, 네트워크 환경 등 다양한 환경에서도 설치 및 사용이 가능하도록 구성되어야 한다.",
+      "acceptance_status": "부분수용",
+      "proposal_section": "(매핑 필요)",
+      "proposal_page_hint": null,
+      "response_summary": "",
+      "reviewer_note": ""
+    },
+    {
+      "req_id": "REQ-008",
+      "requirement_summary": "지역 디성별 환경 차이로 인한 추가 개발 또는 구조 변경 없이 시스템 설치·배포가 가능하도록 범용적인 구조로 설계되어야 한다.",
+      "acceptance_status": "부분수용",
+      "proposal_section": "(매핑 필요)",
+      "proposal_page_hint": null,
+      "response_summary": "",
+      "reviewer_note": ""
+    },
+    {
+      "req_id": "REQ-009",
+      "requirement_summary": "시스템은 환경 변화에 따라 안정적으로 운영될 수 있도록 환경 의존성을 최소화한 구조를 적용하여야 한다.",
+      "acceptance_status": "부분수용",
+      "proposal_section": "(매핑 필요)",
+      "proposal_page_hint": null,
+      "response_summary": "",
+      "reviewer_note": ""
+    },
+    {
+      "req_id": "REQ-010",
+      "requirement_summary": "시스템은 웹 기반 구조가 아닌 응용프로그램(Application) 기반 구조로 구성되어야 하며, 외부 인터넷을 통한 직접적인 접근 경로를 최소화하고 외부 침입 위험을 원천적으로 차",
+      "acceptance_status": "부분수용",
+      "proposal_section": "(매핑 필요)",
+      "proposal_page_hint": null,
+      "response_summary": "",
+      "reviewer_note": ""
+    },
+    {
+      "req_id": "REQ-011",
+      "requirement_summary": "시스템 기능 개선, 보안 패치, 버전 업그레이드가 필요한 경우, 온라인 방식으로 배포 및 적용이 가능하도록 자동 업데이트 기능이 제공되어야 한다.",
+      "acceptance_status": "부분수용",
+      "proposal_section": "(매핑 필요)",
+      "proposal_page_hint": null,
+      "response_summary": "",
+      "reviewer_note": ""
+    },
+    {
+      "req_id": "REQ-012",
+      "requirement_summary": "온라인 업데이트 과정에서 서비스 중단, 데이터 손실 등 운영 안정성에 영향이 최소화되어야 한다.",
+      "acceptance_status": "부분수용",
+      "proposal_section": "(매핑 필요)",
+      "proposal_page_hint": null,
+      "response_summary": "",
+      "reviewer_note": ""
+    },
+    {
+      "req_id": "REQ-013",
+      "requirement_summary": "향후 기능 추가, 지자체 확대 및 운영 정책 변경에 대응할 수 있도록 확장 가능한 구조를 적용하여야 한다.",
+      "acceptance_status": "부분수용",
+      "proposal_section": "(매핑 필요)",
+      "proposal_page_hint": null,
+      "response_summary": "",
+      "reviewer_note": ""
+    },
+    {
+      "req_id": "REQ-014",
+      "requirement_summary": "공공기관 정보시스템 구축·운영 지침을 준수하여야 한다.",
+      "acceptance_status": "부분수용",
+      "proposal_section": "(매핑 필요)",
+      "proposal_page_hint": null,
+      "response_summary": "",
+      "reviewer_note": ""
+    },
+    {
+      "req_id": "REQ-015",
+      "requirement_summary": "본 사업은 중앙디성 삭제지원시스템의 전환 또는 대체를 전제로 하지 않으며, 기존 삭제지원시스템은 동일한 방식으로 유지·운영되어야 한다.",
+      "acceptance_status": "부분수용",
+      "proposal_section": "(매핑 필요)",
+      "proposal_page_hint": null,
+      "response_summary": "",
+      "reviewer_note": ""
+    },
+    {
+      "req_id": "REQ-016",
+      "requirement_summary": "중앙디성 삭제지원시스템과 시스템은 상호 간섭 없이 운영될 수 있도록 설계되어야 한다.",
+      "acceptance_status": "부분수용",
+      "proposal_section": "(매핑 필요)",
+      "proposal_page_hint": null,
+      "response_summary": "",
+      "reviewer_note": ""
+    },
+    {
+      "req_id": "REQ-017",
+      "requirement_summary": "중앙디성은 시스템의 운영 현황을 관리할 수 있는 구조를 마련하여야 한다.",
+      "acceptance_status": "부분수용",
+      "proposal_section": "(매핑 필요)",
+      "proposal_page_hint": null,
+      "response_summary": "",
+      "reviewer_note": ""
+    },
+    {
+      "req_id": "REQ-018",
+      "requirement_summary": "시스템을 통해 지자체 단위로 상담 및 삭제지원 업무를 수행할 수 있는 운영 구조를 제공하여야 한다.",
+      "acceptance_status": "부분수용",
+      "proposal_section": "(매핑 필요)",
+      "proposal_page_hint": null,
+      "response_summary": "",
+      "reviewer_note": ""
+    },
+    {
+      "req_id": "REQ-019",
+      "requirement_summary": "지자체 단위 운영은 업무 수행 주체의 구분을 의미하며, 상담·삭제지원 등 주요 업무 프로세스는 중앙디성에서 정의한 업무 표준을 필수적으로 준수하도록 설계되어야 한다.",
+      "acceptance_status": "부분수용",
+      "proposal_section": "(매핑 필요)",
+      "proposal_page_hint": null,
+      "response_summary": "",
+      "reviewer_note": ""
+    },
+    {
+      "req_id": "REQ-020",
+      "requirement_summary": "본 운영 구조는 향후 지자체 확대, 운영 범위 확장 및 조직 변화에 대응할 수 있도록 확장성을 고려하여 설계되어야 한다.",
+      "acceptance_status": "부분수용",
+      "proposal_section": "(매핑 필요)",
+      "proposal_page_hint": null,
+      "response_summary": "",
+      "reviewer_note": ""
+    },
+    {
+      "req_id": "REQ-021",
+      "requirement_summary": "시스템 로그인 시 사용자 ID 및 비밀번호 기반 인증을 기본으로 적용하여야 한다.",
+      "acceptance_status": "부분수용",
+      "proposal_section": "(매핑 필요)",
+      "proposal_page_hint": null,
+      "response_summary": "",
+      "reviewer_note": ""
+    },
+    {
+      "req_id": "REQ-022",
+      "requirement_summary": "로그인 이후 세션 유지 및 종료를 안전하게 관리할 수 있도록 세션 관리 기능을 제공하여야 한다.",
+      "acceptance_status": "부분수용",
+      "proposal_section": "(매핑 필요)",
+      "proposal_page_hint": null,
+      "response_summary": "",
+      "reviewer_note": ""
+    },
+    {
+      "req_id": "REQ-023",
+      "requirement_summary": "일정 시간 이상 미사용 시 자동 로그아웃 등 세션 보안 정책을 적용하여야 한다.",
+      "acceptance_status": "부분수용",
+      "proposal_section": "(매핑 필요)",
+      "proposal_page_hint": null,
+      "response_summary": "",
+      "reviewer_note": ""
+    },
+    {
+      "req_id": "REQ-024",
+      "requirement_summary": "보안 수준 강화를 위해 OTP 등 추가 인증 수단을 적용하여야 한다.",
+      "acceptance_status": "부분수용",
+      "proposal_section": "(매핑 필요)",
+      "proposal_page_hint": null,
+      "response_summary": "",
+      "reviewer_note": ""
+    },
+    {
+      "req_id": "REQ-025",
+      "requirement_summary": "시스템 접속 구간의 보안을 확보하기 위해 VPN 기반 보안 접속 방식을 적용하여야 한다.",
+      "acceptance_status": "부분수용",
+      "proposal_section": "(매핑 필요)",
+      "proposal_page_hint": null,
+      "response_summary": "",
+      "reviewer_note": ""
+    },
+    {
+      "req_id": "REQ-026",
+      "requirement_summary": "VPN 기반 보안 접속 방식은 보안 기준을 충족하는 암호화 기술을 활용해야 한다.",
+      "acceptance_status": "부분수용",
+      "proposal_section": "(매핑 필요)",
+      "proposal_page_hint": null,
+      "response_summary": "",
+      "reviewer_note": ""
+    },
+    {
+      "req_id": "REQ-027",
+      "requirement_summary": "VPN을 통해 허용된 네트워크에서만 시스템 접속이 가능하도록 네트워크 접근 통제를 적용하여야 한다.",
+      "acceptance_status": "부분수용",
+      "proposal_section": "(매핑 필요)",
+      "proposal_page_hint": null,
+      "response_summary": "",
+      "reviewer_note": ""
+    },
+    {
+      "req_id": "REQ-028",
+      "requirement_summary": "시스템 접속 시 허가된 단말 및 네트워크 환경에서만 접근이 가능하도록 MAC 주소 기반 접근 인증을 적용하여야 한다.",
+      "acceptance_status": "부분수용",
+      "proposal_section": "(매핑 필요)",
+      "proposal_page_hint": null,
+      "response_summary": "",
+      "reviewer_note": ""
+    },
+    {
+      "req_id": "REQ-029",
+      "requirement_summary": "시스템 접속은 사전에 등록·허용된 IP 주소 또는 IP 대역에서만 가능하도록 IP 기반 접근 통제를 적용하여야 한다.",
+      "acceptance_status": "부분수용",
+      "proposal_section": "(매핑 필요)",
+      "proposal_page_hint": null,
+      "response_summary": "",
+      "reviewer_note": ""
+    },
+    {
+      "req_id": "REQ-030",
+      "requirement_summary": "MAC 주소 인증 및 IP 인증은 단독 또는 복합 방식으로 적용하여야 한다.",
+      "acceptance_status": "부분수용",
+      "proposal_section": "(매핑 필요)",
+      "proposal_page_hint": null,
+      "response_summary": "",
+      "reviewer_note": ""
+    },
+    {
+      "req_id": "REQ-031",
+      "requirement_summary": "MAC 주소 또는 IP 정보 변경, 추가, 해제 시 이력 관리 및 관리 권한 통제가 되어야 한다.",
+      "acceptance_status": "부분수용",
+      "proposal_section": "(매핑 필요)",
+      "proposal_page_hint": null,
+      "response_summary": "",
+      "reviewer_note": ""
+    },
+    {
+      "req_id": "REQ-032",
+      "requirement_summary": "시스템 이용자를 체계적으로 관리하고, 사용자 역할에 따라 시스템 기능 접근을 통제할 수 있는 사용자 및 권한 관리 체계를 제공되어야 한다.",
+      "acceptance_status": "부분수용",
+      "proposal_section": "(매핑 필요)",
+      "proposal_page_hint": null,
+      "response_summary": "",
+      "reviewer_note": ""
+    },
+    {
+      "req_id": "REQ-033",
+      "requirement_summary": "시스템 이용자를 대상으로 사용자 계정 생성, 변경, 삭제 등 계정 관리 기능을 제공하여야 한다.",
+      "acceptance_status": "부분수용",
+      "proposal_section": "(매핑 필요)",
+      "proposal_page_hint": null,
+      "response_summary": "",
+      "reviewer_note": ""
+    },
+    {
+      "req_id": "REQ-034",
+      "requirement_summary": "사용자 역할에 따라 시스템 기능 및 데이터 접근 권한을 차등 부여할 수 있도록 역할 기반 권한 관리 구조를 제공하여야 한다.",
+      "acceptance_status": "부분수용",
+      "proposal_section": "(매핑 필요)",
+      "proposal_page_hint": null,
+      "response_summary": "",
+      "reviewer_note": ""
+    },
+    {
+      "req_id": "REQ-035",
+      "requirement_summary": "권한별로 접근 가능한 기능 및 메뉴를 통제하여, 업무 수행 범위에 맞는 시스템 이용이 가능하도록 설계되어야 한다.",
+      "acceptance_status": "부분수용",
+      "proposal_section": "(매핑 필요)",
+      "proposal_page_hint": null,
+      "response_summary": "",
+      "reviewer_note": ""
+    },
+    {
+      "req_id": "REQ-036",
+      "requirement_summary": "사용자 및 권한 관리 체계는 중앙디성의 운영 정책 및 업무 기준을 반영할 수 있도록 구성하여야 한다.",
+      "acceptance_status": "부분수용",
+      "proposal_section": "(매핑 필요)",
+      "proposal_page_hint": null,
+      "response_summary": "",
+      "reviewer_note": ""
+    },
+    {
+      "req_id": "REQ-037",
+      "requirement_summary": "지자체 단위로 데이터를 분리하여 관리하고, 중앙디성과 지자체 간 데이터 접근 범위를 명확히 통제할 수 있는 데이터 관리 구조를 제공하여야 한다.",
+      "acceptance_status": "부분수용",
+      "proposal_section": "(매핑 필요)",
+      "proposal_page_hint": null,
+      "response_summary": "",
+      "reviewer_note": ""
+    },
+    {
+      "req_id": "REQ-038",
+      "requirement_summary": "지자체별로 접근 가능한 데이터 범위를 제한하여, 타 지자체의 데이터에 접근할 수 없도록 통제되어야 한다.",
+      "acceptance_status": "부분수용",
+      "proposal_section": "(매핑 필요)",
+      "proposal_page_hint": null,
+      "response_summary": "",
+      "reviewer_note": ""
+    },
+    {
+      "req_id": "REQ-039",
+      "requirement_summary": "중앙디성과 지자체 간 데이터 접근은 역할 및 권한 체계에 따라 차등 적용되도록 설계되어야 한다.",
+      "acceptance_status": "부분수용",
+      "proposal_section": "(매핑 필요)",
+      "proposal_page_hint": null,
+      "response_summary": "",
+      "reviewer_note": ""
+    },
+    {
+      "req_id": "REQ-040",
+      "requirement_summary": "데이터 분리 및 접근 통제 구조는 중앙디성의 운영 정책 및 개인정보 보호 기준을 반영하여 구성되어야 한다.",
+      "acceptance_status": "부분수용",
+      "proposal_section": "(매핑 필요)",
+      "proposal_page_hint": null,
+      "response_summary": "",
+      "reviewer_note": ""
+    },
+    {
+      "req_id": "REQ-041",
+      "requirement_summary": "중앙디성이 정의한 피해상담 업무의 단계(접수–상담 진행–조치/연계–종결 등)를 시스템 상에서 수행할 수 있도록 동일한 프로세스로 제공되어야 한다.",
+      "acceptance_status": "부분수용",
+      "proposal_section": "(매핑 필요)",
+      "proposal_page_hint": null,
+      "response_summary": "",
+      "reviewer_note": ""
+    },
+    {
+      "req_id": "REQ-042",
+      "requirement_summary": "상담 프로세스는 중앙디성의 업무 표준(필수 입력 항목, 처리 기준, 업무 흐름)을 시스템적으로 반영하여 지자체 간 상담 처리 방식이 동일하게 적용되도록 설계되어야 한다.",
+      "acceptance_status": "부분수용",
+      "proposal_section": "(매핑 필요)",
+      "proposal_page_hint": null,
+      "response_summary": "",
+      "reviewer_note": ""
+    },
+    {
+      "req_id": "REQ-043",
+      "requirement_summary": "프로세스 단계별로 필요한 화면/기능이 연계되어 사용자가 누락 없이 업무를 진행할 수 있도록 구성되어야 한다.",
+      "acceptance_status": "부분수용",
+      "proposal_section": "(매핑 필요)",
+      "proposal_page_hint": null,
+      "response_summary": "",
+      "reviewer_note": ""
+    },
+    {
+      "req_id": "REQ-044",
+      "requirement_summary": "중앙디성의 운영정책 또는 상담 기준이 변경되는 경우, 해당 기준이 지자체 상담 업무에 반영될 수 있도록 관리 및 적용 구조가 제공되어야 한다.",
+      "acceptance_status": "부분수용",
+      "proposal_section": "(매핑 필요)",
+      "proposal_page_hint": null,
+      "response_summary": "",
+      "reviewer_note": ""
+    },
+    {
+      "req_id": "REQ-045",
+      "requirement_summary": "상담 업무는 사례(케이스) 단위로 등록·관리되어야 하며, 사례별 식별번호 부여 및 상태 관리가 가능하여야 한다.",
+      "acceptance_status": "부분수용",
+      "proposal_section": "(매핑 필요)",
+      "proposal_page_hint": null,
+      "response_summary": "",
+      "reviewer_note": ""
+    },
+    {
+      "req_id": "REQ-046",
+      "requirement_summary": "상담 접수 경로(예: 온라인/전화/내방/유관기관 연계 등) 및 접수 일시, 담당기관(지자체) 등의 기본 정보는 시스템에 기록되어야 한다.",
+      "acceptance_status": "부분수용",
+      "proposal_section": "(매핑 필요)",
+      "proposal_page_hint": null,
+      "response_summary": "",
+      "reviewer_note": ""
+    },
+    {
+      "req_id": "REQ-047",
+      "requirement_summary": "사례를 담당자(상담사/삭제지원 담당자 등)에게 배정·변경할 수 있는 기능을 제공하여야 하며, 배정 이력(배정자, 배정일시, 변경 사유)은 시스템에서 관리되어야 한다.",
+      "acceptance_status": "부분수용",
+      "proposal_section": "(매핑 필요)",
+      "proposal_page_hint": null,
+      "response_summary": "",
+      "reviewer_note": ""
+    },
+    {
+      "req_id": "REQ-048",
+      "requirement_summary": "사례의 진행 상태(예: 접수/진행/보완요청/종결 등)는 체계적으로 관리되어야 하며, 상태 변경 이력 및 사유는 기록되어야 한다.",
+      "acceptance_status": "부분수용",
+      "proposal_section": "(매핑 필요)",
+      "proposal_page_hint": null,
+      "response_summary": "",
+      "reviewer_note": ""
+    },
+    {
+      "req_id": "REQ-049",
+      "requirement_summary": "담당자 부재, 업무량 분산 등 운영 상황을 고려하여 재배정 등 운영 기능이 제공되어야 한다.",
+      "acceptance_status": "부분수용",
+      "proposal_section": "(매핑 필요)",
+      "proposal_page_hint": null,
+      "response_summary": "",
+      "reviewer_note": ""
+    },
+    {
+      "req_id": "REQ-050",
+      "requirement_summary": "상담 과정에서 발생하는 상담 기록(상담 내용, 조치 사항, 안내 내용 등)을 사례별로 누적 관리되어야 한다.",
+      "acceptance_status": "부분수용",
+      "proposal_section": "(매핑 필요)",
+      "proposal_page_hint": null,
+      "response_summary": "",
+      "reviewer_note": ""
+    },
+    {
+      "req_id": "REQ-051",
+      "requirement_summary": "상담일지는 중앙디성 기준 양식/필수항목을 반영하여 작성되어야 하며, 작성·수정·조회가 가능하여야 한다.",
+      "acceptance_status": "부분수용",
+      "proposal_section": "(매핑 필요)",
+      "proposal_page_hint": null,
+      "response_summary": "",
+      "reviewer_note": ""
+    },
+    {
+      "req_id": "REQ-052",
+      "requirement_summary": "상담 기록은 작성자, 작성일시, 수정 이력 등 변경 이력이 관리되어야 한다.",
+      "acceptance_status": "부분수용",
+      "proposal_section": "(매핑 필요)",
+      "proposal_page_hint": null,
+      "response_summary": "",
+      "reviewer_note": ""
+    },
+    {
+      "req_id": "REQ-053",
+      "requirement_summary": "상담 기록은 업무상 필요한 형태로 검색/필터링(사례번호, 담당자, 기간, 진행상태 등)이 가능하여야 한다.",
+      "acceptance_status": "부분수용",
+      "proposal_section": "(매핑 필요)",
+      "proposal_page_hint": null,
+      "response_summary": "",
+      "reviewer_note": ""
+    },
+    {
+      "req_id": "REQ-054",
+      "requirement_summary": "사례별 첨부자료(관련 문서, 증빙 파일 등)를 등록·관리할 수 있는 기능이 제공되어야 한다.",
+      "acceptance_status": "부분수용",
+      "proposal_section": "(매핑 필요)",
+      "proposal_page_hint": null,
+      "response_summary": "",
+      "reviewer_note": ""
+    },
+    {
+      "req_id": "REQ-055",
+      "requirement_summary": "사례별로 피해자 정보를 관리되어야 하며, 중앙디성 기준에 따른 필수/선택 항목을 반영하어야 한다.",
+      "acceptance_status": "부분수용",
+      "proposal_section": "(매핑 필요)",
+      "proposal_page_hint": null,
+      "response_summary": "",
+      "reviewer_note": ""
+    },
+    {
+      "req_id": "REQ-056",
+      "requirement_summary": "필요 시 사례별로 가해자 및 의뢰인(대리인 포함) 정보가 관리되어야 하며, 관계(피해자와의 관계), 연락처 등 업무에 필요한 정보를 기록할 수 있어야 한다.",
+      "acceptance_status": "부분수용",
+      "proposal_section": "(매핑 필요)",
+      "proposal_page_hint": null,
+      "response_summary": "",
+      "reviewer_note": ""
+    },
+    {
+      "req_id": "REQ-057",
+      "requirement_summary": "개인정보가 포함된 항목은 사용자 권한에 따라 조회 범위를 제한되도록 설계되어야 한다.",
+      "acceptance_status": "부분수용",
+      "proposal_section": "(매핑 필요)",
+      "proposal_page_hint": null,
+      "response_summary": "",
+      "reviewer_note": ""
+    },
+    {
+      "req_id": "REQ-058",
+      "requirement_summary": "동일 대상자(피해자 등)가 다수 사례로 연결되는 경우 사례 간 연계 또는 동일인 식별 기능이 제공되어야 한다.",
+      "acceptance_status": "부분수용",
+      "proposal_section": "(매핑 필요)",
+      "proposal_page_hint": null,
+      "response_summary": "",
+      "reviewer_note": ""
+    },
+    {
+      "req_id": "REQ-059",
+      "requirement_summary": "대상자 정보 변경 이력(변경자, 변경일시, 변경 내용)이 관리되어야 한다.",
+      "acceptance_status": "부분수용",
+      "proposal_section": "(매핑 필요)",
+      "proposal_page_hint": null,
+      "response_summary": "",
+      "reviewer_note": ""
+    },
+    {
+      "req_id": "REQ-060",
+      "requirement_summary": "상담 결과를 기반으로 중앙디성 기준의 상담 결과 보고서(또는 확인서/내부 보고 문서 등)는 시스템을 통해 생성되어야 한다.",
+      "acceptance_status": "부분수용",
+      "proposal_section": "(매핑 필요)",
+      "proposal_page_hint": null,
+      "response_summary": "",
+      "reviewer_note": ""
+    },
+    {
+      "req_id": "REQ-061",
+      "requirement_summary": "보고서는 사례 정보 및 상담일지 내용을 기반으로 자동 반영(자동 입력)되어야 하며, 필요 시 사용자가 편집할 수 있어야 한다.",
+      "acceptance_status": "부분수용",
+      "proposal_section": "(매핑 필요)",
+      "proposal_page_hint": null,
+      "response_summary": "",
+      "reviewer_note": ""
+    },
+    {
+      "req_id": "REQ-062",
+      "requirement_summary": "보고서의 생성·수정·버전 관리(작성일시, 작성자, 수정 이력)기능을 제공하여야 한다.",
+      "acceptance_status": "부분수용",
+      "proposal_section": "(매핑 필요)",
+      "proposal_page_hint": null,
+      "response_summary": "",
+      "reviewer_note": ""
+    },
+    {
+      "req_id": "REQ-063",
+      "requirement_summary": "보고서는 업무 목적에 맞는 형식으로 출력 또는 파일 형태로 관리되어야 한다.",
+      "acceptance_status": "부분수용",
+      "proposal_section": "(매핑 필요)",
+      "proposal_page_hint": null,
+      "response_summary": "",
+      "reviewer_note": ""
+    },
+    {
+      "req_id": "REQ-064",
+      "requirement_summary": "보고서 생성 과정에서 개인정보 노출이 최소화되도록 권한 및 출력 범위가 통제되어야 한다.",
+      "acceptance_status": "부분수용",
+      "proposal_section": "(매핑 필요)",
+      "proposal_page_hint": null,
+      "response_summary": "",
+      "reviewer_note": ""
+    },
+    {
+      "req_id": "REQ-065",
+      "requirement_summary": "사례/상담일지/보고서에 대해 통합 검색 및 조건별 조회(기간, 담당자, 상태, 접수경로 등)기능을 제공하여야 한다.",
+      "acceptance_status": "부분수용",
+      "proposal_section": "(매핑 필요)",
+      "proposal_page_hint": null,
+      "response_summary": "",
+      "reviewer_note": ""
+    },
+    {
+      "req_id": "REQ-066",
+      "requirement_summary": "담당자별 업무 현황(미처리/진행/보완요청 등)은 시스템을 통해 확인가능하여야 한다.",
+      "acceptance_status": "부분수용",
+      "proposal_section": "(매핑 필요)",
+      "proposal_page_hint": null,
+      "response_summary": "",
+      "reviewer_note": ""
+    },
+    {
+      "req_id": "REQ-067",
+      "requirement_summary": "중앙디성의 표준 업무 항목(분류/코드/상태값 등)을 적용할 수 있도록 공통 분류체계로 적용되어야 한다.",
+      "acceptance_status": "부분수용",
+      "proposal_section": "(매핑 필요)",
+      "proposal_page_hint": null,
+      "response_summary": "",
+      "reviewer_note": ""
+    },
+    {
+      "req_id": "REQ-068",
+      "requirement_summary": "삭제지원 업무는 중앙디성에서 정의한 표준 삭제지원 프로세스(요청–진행–조치–확인–종결 등)를 기준으로 시스템상에서 동일하게 수행할 수 있도록 제공되어야 한다.",
+      "acceptance_status": "부분수용",
+      "proposal_section": "(매핑 필요)",
+      "proposal_page_hint": null,
+      "response_summary": "",
+      "reviewer_note": ""
+    },
+    {
+      "req_id": "REQ-069",
+      "requirement_summary": "삭제지원 프로세스 단계별 필수 입력 항목, 처리 기준, 업무 흐름을 시스템적으로 반영하여 지자체 간 삭제지원 업무 처리 방식이 동일하게 적용되도록 설계되어야 한다.",
+      "acceptance_status": "부분수용",
+      "proposal_section": "(매핑 필요)",
+      "proposal_page_hint": null,
+      "response_summary": "",
+      "reviewer_note": ""
+    },
+    {
+      "req_id": "REQ-070",
+      "requirement_summary": "삭제지원 업무 단계별로 필요한 기능과 화면은 상호 연계되어 누락 없이 업무가 수행될 수 있도록 구성되어야 한다.",
+      "acceptance_status": "부분수용",
+      "proposal_section": "(매핑 필요)",
+      "proposal_page_hint": null,
+      "response_summary": "",
+      "reviewer_note": ""
+    },
+    {
+      "req_id": "REQ-071",
+      "requirement_summary": "중앙디성의 삭제지원 정책 또는 처리 기준이 변경되는 경우 지자체 삭제지원 업무에 반영되어야 한다.",
+      "acceptance_status": "부분수용",
+      "proposal_section": "(매핑 필요)",
+      "proposal_page_hint": null,
+      "response_summary": "",
+      "reviewer_note": ""
+    },
+    {
+      "req_id": "REQ-072",
+      "requirement_summary": "삭제지원 요청은 사례(상담 케이스)와 연계되어 생성 및 관리되어야 한다.",
+      "acceptance_status": "부분수용",
+      "proposal_section": "(매핑 필요)",
+      "proposal_page_hint": null,
+      "response_summary": "",
+      "reviewer_note": ""
+    },
+    {
+      "req_id": "REQ-073",
+      "requirement_summary": "삭제 대상 콘텐츠(URL, 플랫폼, 게시물 유형 등)에 대한 기본 정보는 시스템에 등록되어 체계적으로 관리되어야 한다.",
+      "acceptance_status": "부분수용",
+      "proposal_section": "(매핑 필요)",
+      "proposal_page_hint": null,
+      "response_summary": "",
+      "reviewer_note": ""
+    },
+    {
+      "req_id": "REQ-074",
+      "requirement_summary": "삭제 요청 건별로 요청 일시, 요청 주체, 처리 상태는 개별적으로 관리되어야 한다.",
+      "acceptance_status": "부분수용",
+      "proposal_section": "(매핑 필요)",
+      "proposal_page_hint": null,
+      "response_summary": "",
+      "reviewer_note": ""
+    },
+    {
+      "req_id": "REQ-075",
+      "requirement_summary": "하나의 사례에 대해 다수의 삭제 요청을 등록·관리되어야 하며, 요청별 상태를 개별적으로 관리되어야 한다.",
+      "acceptance_status": "부분수용",
+      "proposal_section": "(매핑 필요)",
+      "proposal_page_hint": null,
+      "response_summary": "",
+      "reviewer_note": ""
+    },
+    {
+      "req_id": "REQ-076",
+      "requirement_summary": "삭제 요청의 생성·수정·취소 이력 및 변경 사유는 시스템에서 기록 관리되어야 한다.",
+      "acceptance_status": "부분수용",
+      "proposal_section": "(매핑 필요)",
+      "proposal_page_hint": null,
+      "response_summary": "",
+      "reviewer_note": ""
+    },
+    {
+      "req_id": "REQ-077",
+      "requirement_summary": "삭제지원 요청별 진행 상태(요청, 접수, 처리 중, 완료, 보류 등)를 실시간 또는 준실시간으로 관리되어야 한다.",
+      "acceptance_status": "부분수용",
+      "proposal_section": "(매핑 필요)",
+      "proposal_page_hint": null,
+      "response_summary": "",
+      "reviewer_note": ""
+    },
+    {
+      "req_id": "REQ-078",
+      "requirement_summary": "지자체 담당자는 본인이 담당한 삭제지원 요청의 진행 현황을 확인할 수 있어야 한다.",
+      "acceptance_status": "부분수용",
+      "proposal_section": "(매핑 필요)",
+      "proposal_page_hint": null,
+      "response_summary": "",
+      "reviewer_note": ""
+    },
+    {
+      "req_id": "REQ-079",
+      "requirement_summary": "삭제지원 업무 현황을 한눈에 파악할 수 있도록 요청 건수, 처리 상태, 지연 건수 등을 제공하는 대시보드를 제공하여야 한다.",
+      "acceptance_status": "부분수용",
+      "proposal_section": "(매핑 필요)",
+      "proposal_page_hint": null,
+      "response_summary": "",
+      "reviewer_note": ""
+    },
+    {
+      "req_id": "REQ-080",
+      "requirement_summary": "삭제지원 과정에서 외부 플랫폼(웹사이트, 커뮤니티 등)에 대한 대응 이력을 기록·관리되어야 한다.",
+      "acceptance_status": "부분수용",
+      "proposal_section": "(매핑 필요)",
+      "proposal_page_hint": null,
+      "response_summary": "",
+      "reviewer_note": ""
+    },
+    {
+      "req_id": "REQ-081",
+      "requirement_summary": "자동 채증 과정에서 오류가 발생한 경우, 오류 사유를 확인할 수 있는 기능이 제공하여야 한다.",
+      "acceptance_status": "부분수용",
+      "proposal_section": "(매핑 필요)",
+      "proposal_page_hint": null,
+      "response_summary": "",
+      "reviewer_note": ""
+    },
+    {
+      "req_id": "REQ-082",
+      "requirement_summary": "사업예산: 490,000,000원 (VAT 포함)",
+      "acceptance_status": "부분수용",
+      "proposal_section": "(매핑 필요)",
+      "proposal_page_hint": null,
+      "response_summary": "",
+      "reviewer_note": ""
+    },
+    {
+      "req_id": "REQ-083",
+      "requirement_summary": "사업기간: 계약 후 180일",
+      "acceptance_status": "부분수용",
+      "proposal_section": "(매핑 필요)",
+      "proposal_page_hint": null,
+      "response_summary": "",
+      "reviewer_note": ""
+    },
+    {
+      "req_id": "REQ-084",
+      "requirement_summary": "계약방법: 제한경쟁(협상에 의한 계약)",
+      "acceptance_status": "부분수용",
+      "proposal_section": "(매핑 필요)",
+      "proposal_page_hint": null,
+      "response_summary": "",
+      "reviewer_note": ""
+    },
+    {
+      "req_id": "REQ-085",
+      "requirement_summary": "본 사업은 「소프트웨어 진흥법」 제50조에 따른 과업내용 확정을 위하여 과업심의위원회를 개최한 사업이다.",
+      "acceptance_status": "부분수용",
+      "proposal_section": "(매핑 필요)",
+      "proposal_page_hint": null,
+      "response_summary": "",
+      "reviewer_note": ""
+    },
+    {
+      "req_id": "REQ-086",
+      "requirement_summary": "본 사업은 「소프트웨어사업 계약 및 관리감독에 관한 지침」제10조에 따라, 적정 사업기간 종합 산정서를 제공해야 한다.",
+      "acceptance_status": "부분수용",
+      "proposal_section": "(매핑 필요)",
+      "proposal_page_hint": null,
+      "response_summary": "",
+      "reviewer_note": ""
+    },
+    {
+      "req_id": "REQ-087",
+      "requirement_summary": "본 사업의 적정 사업기간 산정을 위한 기능점수 규모는 399.4FP로, 해당 규모는 분석·설계과정에서 변경될 수 있다.",
+      "acceptance_status": "부분수용",
+      "proposal_section": "(매핑 필요)",
+      "proposal_page_hint": null,
+      "response_summary": "",
+      "reviewer_note": ""
+    },
+    {
+      "req_id": "REQ-088",
+      "requirement_summary": "행정기관 및 공공기관 정보시스템 구축·운영 지침 제17조에 의거 필요시 보안서약서 제출 후 열람 가능하다.",
+      "acceptance_status": "부분수용",
+      "proposal_section": "(매핑 필요)",
+      "proposal_page_hint": null,
+      "response_summary": "",
+      "reviewer_note": ""
+    },
+    {
+      "req_id": "REQ-089",
+      "requirement_summary": "설치형 SW 관리 서버 1식을 신규 도입해야 한다.",
+      "acceptance_status": "부분수용",
+      "proposal_section": "(매핑 필요)",
+      "proposal_page_hint": null,
+      "response_summary": "",
+      "reviewer_note": ""
+    },
+    {
+      "req_id": "REQ-090",
+      "requirement_summary": "AI 업무 시스템 서버 1식을 신규 도입해야 한다.",
+      "acceptance_status": "부분수용",
+      "proposal_section": "(매핑 필요)",
+      "proposal_page_hint": null,
+      "response_summary": "",
+      "reviewer_note": ""
+    },
+    {
+      "req_id": "REQ-091",
+      "requirement_summary": "설치형 SW 스토리지 1식을 신규 도입해야 한다.",
+      "acceptance_status": "부분수용",
+      "proposal_section": "(매핑 필요)",
+      "proposal_page_hint": null,
+      "response_summary": "",
+      "reviewer_note": ""
+    },
+    {
+      "req_id": "REQ-092",
+      "requirement_summary": "HW는 기 운영중인 IDC 센터 구축 및 운영이 필요하다.",
+      "acceptance_status": "부분수용",
+      "proposal_section": "(매핑 필요)",
+      "proposal_page_hint": null,
+      "response_summary": "",
+      "reviewer_note": ""
+    }
+  ]
+}
